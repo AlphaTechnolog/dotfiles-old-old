@@ -33,17 +33,34 @@ I am using Arch Linux, but I expect you have it, to make all work
 
 ## Installation
 
-To install you can use this commands
+To install you can use this command that move your old
+configs to `foldername.old` and then copy the new folder:
+
+```sh
+curl -sL https://raw.githubusercontent.com/AlphaTechnolog/bspwm-dotfiles-v2/main/install-folders.sh | bash
+```
+
+It has the next bash script content:
 
 ```sh
 git clone https://github.com/AlphaTechnolog/bspwm-dotfiles-v2 ~/.bspwm-dotfiles
 cd ~/.bspwm-dotfiles
 declare -a folders=('.config' '.local/share' '.local/bin')
 for folder in ${folders[@]}; do
-  if ! test -d "~/${folder}"; then
-    mkdir -p "~/${folder}"
+  if ! test -d ~/$folder; then
+    mkdir -p ~/$folder
   fi
-  cp -r "./${folder}/*" "~/${folder}"
+  for subfolder in $(ls ./$folder); do
+    if test -d ~/$folder/$subfolder; then
+      echo "Moving $HOME/$folder/$subfolder -> $HOME/$folder/$subfolder.old"
+      mv ~/$folder/$subfolder ~/$folder/$subfolder.old
+    fi
+    if test -f ~/$folder/$subfolder; then
+      echo "Moving $HOME/$folder/$subfolder -> $HOME/$folder/$subfolder.old"
+      mv ~/$folder/$subfolder ~/$folder/$subfolder.old
+    fi
+    cp -r ./$folder/$subfolder ~/$folder/
+  done
 done
 ```
 
