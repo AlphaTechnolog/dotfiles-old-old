@@ -52,6 +52,8 @@ done
 ![catppuccin-cat](./.sample-wallpapers/catppuccin-cat.png)
 ![magenta-blue](./.sample-wallpapers/magenta-blue.png)
 
+> You will find more catppuccin wallpapers [here](https://github.com/catppuccin/wallpapers)
+
 ## Dedicated to
 
 [my brother](https://github.com/Jags1906) <3
