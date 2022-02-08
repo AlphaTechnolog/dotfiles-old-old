@@ -414,7 +414,7 @@ format-foreground = ${colors.cyan}
 format-padding = 0
 
 exec = ~/.local/bin/spotify_status.py -t 50 -qf '{artist}: {song}'
-click-left = bspc desktop -f '^8' --follow
+click-left = bspc desktop -f '^7' --follow
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/memory]
 type = internal/memory
