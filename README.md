@@ -51,3 +51,7 @@ done
 
 ![catppuccin-cat](./.sample-wallpapers/catppuccin-cat.png)
 ![magenta-blue](./.sample-wallpapers/magenta-blue.png)
+
+## Dedicated to
+
+[my brother](https://github.com/Jags1906) <3
