@@ -1,0 +1,47 @@
+colors:
+  bright:
+    black: '#988BA2'
+    blue: '#96CDFB'
+    cyan: '#89DCEB'
+    green: '#ABE9B3'
+    magenta: '#F5C2E7'
+    red: '#F28FAD'
+    white: '#D9E0EE'
+    yellow: '#FAE3B0'
+  cursor:
+    cursor: '#F5E0DC'
+    text: '#1E1D2F'
+  indexed_colors:
+  - color: '#F8BD96'
+    index: 16
+  - color: '#F5E0DC'
+    index: 17
+  normal:
+    black: '#6E6C7E'
+    blue: '#96CDFB'
+    cyan: '#89DCEB'
+    green: '#ABE9B3'
+    magenta: '#F5C2E7'
+    red: '#F28FAD'
+    white: '#D9E0EE'
+    yellow: '#FAE3B0'
+  primary:
+    background: '#1E1D2F'
+    foreground: '#D9E0EE'
+cursor:
+  style:
+    shape: Beam
+env:
+  TERM: xterm-256color
+font:
+  bold:
+    family: Iosevka Nerd Font
+  italic:
+    family: Iosevka Nerd Font
+  normal:
+    family: Iosevka Nerd Font
+  size: 12.0
+window:
+  padding:
+    x: 20
+    y: 20

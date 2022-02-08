@@ -1,0 +1,11 @@
+#!/bin/bash
+
+ROOT=$HOME/.config/bspwm
+
+# to start
+declare -a to_start=('autostart' 'monitor' 'common' 'polybar' 'floating')
+for script in ${to_start[@]}; do
+  if test -f $ROOT/$script.sh; then
+    bash $ROOT/$script.sh
+  fi
+done
