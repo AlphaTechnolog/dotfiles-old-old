@@ -8,8 +8,9 @@
 
 xsetroot -cursor_name left_ptr
 picom -b
-feh --bg-fill ~/Pictures/catppuccin-cat.png
 
+# Change the wallpaper path to your appropiate wallpaper path
+# feh --bg-fill ~/.bspwm-dotfiles/.sample-wallpapers/catppuccin-cat.png
 
 # don't remove this please
 sxhkd &
