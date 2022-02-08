@@ -52,7 +52,7 @@ done
 ![catppuccin-cat](./.sample-wallpapers/catppuccin-cat.png)
 ![magenta-blue](./.sample-wallpapers/magenta-blue.png)
 
-> You will find more catppuccin wallpapers [here](https://github.com/catppuccin/wallpapers)
+> You can get more catppuccin-based wallpapers [here](https://github.com/catppuccin/wallpapers)
 
 ## Dedicated to
 
