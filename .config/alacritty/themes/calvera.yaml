@@ -1,0 +1,25 @@
+colors:
+  primary:
+    background: "#0c0c1f"
+    foreground: "#B0BEC5"
+  cursor:
+    text: CellBackground
+    cursor: "#AAB4EC"
+  normal:
+    black: "#000000"
+    red: "#E97A7A"
+    green: "#ADCEA1"
+    yellow: "#D6B295"
+    blue: "#82AAFF"
+    magenta: "#C792EA"
+    cyan: "#7878E7"
+    white: "#FFFFFF"
+  bright:
+    black: "#717CB4"
+    red: "#FF5370"
+    green: "#ADCEA1"
+    yellow: "#D6B295"
+    blue: "#82AAFF"
+    magenta: "#FF9CAC"
+    cyan: "#7878E7"
+    white: "#B0BEC5"
