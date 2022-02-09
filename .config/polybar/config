@@ -323,7 +323,7 @@ label = "  %output% "
 format-foreground = ${colors.green}
 format-foreground-error = ${colors.red}
 format-background = ${colors.black}
-click-left = kitty -e $SHELL -c 'sudo pacman -Syu'
+click-left = kitty -e $SHELL -c 'sudo pacman -Syu --noconfirm'
 click-right = bspc rule -a \* -o state=floating ; sleep 0.015 ; kitty -e $SHELL -c 'yay -Qu | less'
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
