@@ -17,6 +17,8 @@ You really make me happy if you do it :D
 I am using Arch Linux, but I expect you have it, to make all work
 
 - Iosevka Nerd Font
+- Sauce Code Pro Nerd Font
+- Material Icons
 - kitty
 - alacritty (optional, but alternative to kitty)
 - rofi
