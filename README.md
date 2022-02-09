@@ -32,6 +32,7 @@ I am using Arch Linux, but I expect you have it, to make all work
 - powerlevel 10k (I include the configuration file for it `~/.p10k.zsh`)
 - bat
 - exa
+- dunst
 
 ## Installation
 
