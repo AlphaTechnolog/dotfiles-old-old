@@ -9,6 +9,9 @@
 xsetroot -cursor_name left_ptr
 picom -b
 
+# notification manager (I include configuration for dunst)
+# dunst &
+
 # Change the wallpaper path to your appropiate wallpaper path
 # feh --bg-fill ~/.bspwm-dotfiles/.sample-wallpapers/catppuccin-cat.png
 

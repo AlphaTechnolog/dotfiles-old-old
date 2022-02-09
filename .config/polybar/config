@@ -15,25 +15,25 @@
 ;   \____\___/|_____\___/|_| \_\____/ 
                                     
 [colors]
-background = #1a1b26
+background = #1E1E2E
 background-alt = #d1c4e99
-foreground = #a9b1d6
-foreground-alt = #1a1b26
-primary = #7dcfff
-secondary = #7aa2f7
-alert = #a9b1d6
+foreground = #D9E0EE
+foreground-alt = #1E1E2E
+primary = #F5C2E7
+secondary = #96CDFB
+alert = #988BA2
 
-cyan = #7dcfff
-aqua = #7dcfff
-red = #f7768e
-yellow = #e0af68
-green = #9ece6a
-orange = #e0af68
-magenta = #bb9af7
-white = #a9b1d6
-pink = #bb9af7
-blue = #7aa2f7
-black = #1f2335
+cyan = #89DCEB
+aqua = #89DCEB
+red = #F28FAD
+yellow = #FAE3B0
+green = #ABE9B3
+orange = #FAE3B0
+magenta = #F5C2E7
+white = #D9E0EE
+pink = #F5C2E7
+blue = #89DCEB
+black = #302D41
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -116,15 +116,15 @@ content-font = 2
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/bspwm]
 type = internal/bspwm
-ws-icon-0 = I;%{F#e0af68}  
-ws-icon-1 = II;%{F#7aa2f7}   
-ws-icon-2 = III;%{F#f7768e}    
-ws-icon-3 = IV;%{F#7dcfff}
-ws-icon-4 = V;%{F#a9b1d6}
-ws-icon-5 = VI;%{F#e0af68}
-ws-icon-6 = VII;%{F#9ece6a}
-ws-icon-7 = VIII;%{F#7dcfff}ﭮ
-ws-icon-8 = IX;%{F#bb9af7}
+ws-icon-0 = I;%{F#FAE3B0}  
+ws-icon-1 = II;%{F#96CDFB}   
+ws-icon-2 = III;%{F#F28FAD}    
+ws-icon-3 = IV;%{F#89DCEB}
+ws-icon-4 = V;%{F#c0caf5}
+ws-icon-5 = VI;%{F#FAE3B0}
+ws-icon-6 = VII;%{F#ABE9B3}
+ws-icon-7 = VIII;%{F#89DCEB}ﭮ
+ws-icon-8 = IX;%{F#F5C2E7}
 ws-icon-default = ♟
 
 label-focused = "%icon%"
