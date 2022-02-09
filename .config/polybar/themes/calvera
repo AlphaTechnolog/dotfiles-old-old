@@ -33,7 +33,7 @@ magenta = #C792EA
 white = #FFFFFF
 pink = #C792EA
 blue = #7878E7
-black = #000000
+black = #0a0a1a
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -116,15 +116,15 @@ content-font = 2
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/bspwm]
 type = internal/bspwm
-ws-icon-0 = I;%{F#e0af68}  
-ws-icon-1 = II;%{F#7aa2f7}   
+ws-icon-0 = I;%{F#d6b295}  
+ws-icon-1 = II;%{F#82aaff}   
 ws-icon-2 = III;%{F#f7768e}    
-ws-icon-3 = IV;%{F#7dcfff}
-ws-icon-4 = V;%{F#a9b1d6}
-ws-icon-5 = VI;%{F#e0af68}
-ws-icon-6 = VII;%{F#9ece6a}
-ws-icon-7 = VIII;%{F#7dcfff}ﭮ
-ws-icon-8 = IX;%{F#bb9af7}
+ws-icon-3 = IV;%{F#7878e7}
+ws-icon-4 = V;%{F#FFFFFF}
+ws-icon-5 = VI;%{F#d6b295}
+ws-icon-6 = VII;%{F#adcea1}
+ws-icon-7 = VIII;%{F#7878e7}ﭮ
+ws-icon-8 = IX;%{F#c792ea}
 ws-icon-default = ♟
 
 label-focused = "%icon%"
