@@ -13,7 +13,7 @@ picom -b
 dunst &
 
 # Change the wallpaper path to your appropiate wallpaper path
-feh --bg-fill ~/.bspwm-dotfiles/.sample-wallpapers/catppuccin-city.png
+feh --bg-fill ~/.bspwm-dotfiles/.sample-wallpapers/catppuccin-city.jpg
 
 # don't remove this please
 sxhkd &
