@@ -20,7 +20,7 @@ font = Inconsolata Bold 10
 
 line_height = 0
 markup = full
-format = "<span size='x-large' font_desc='Inconsolata 11' weight='bold' foreground='#96CDFB'>%s</span>\n\n%b"
+format = "<span size='x-large' font_desc='Inconsolata 11' weight='bold' foreground='#F5C2E7'>%s</span>\n\n%b"
 alignment = center
 
 idle_threshold = 120
