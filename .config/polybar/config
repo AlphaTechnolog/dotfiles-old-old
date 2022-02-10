@@ -24,7 +24,7 @@ secondary = #96CDFB
 alert = #988BA2
 
 cyan = #89DCEB
-aqua = #89DCEB
+aqua = #ABE9B3
 red = #F28FAD
 yellow = #FAE3B0
 green = #ABE9B3
@@ -323,7 +323,7 @@ label = "  %output% "
 format-foreground = ${colors.green}
 format-foreground-error = ${colors.red}
 format-background = ${colors.black}
-click-left = kitty -e $SHELL -c 'sudo pacman -Syu --noconfirm'
+click-left = kitty -e $SHELL -c 'sudo pacman -Syu'
 click-right = bspc rule -a \* -o state=floating ; sleep 0.015 ; kitty -e $SHELL -c 'yay -Qu | less'
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -410,7 +410,7 @@ interval = 1
 format-prefix ="      "
 format = <label>
 format-background = ${colors.black}
-format-foreground = ${colors.cyan}
+format-foreground = ${colors.aqua}
 format-padding = 0
 
 exec = ~/.local/bin/spotify_status.py -t 50 -qf '{artist}: {song}'
