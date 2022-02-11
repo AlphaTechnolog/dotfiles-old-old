@@ -30,7 +30,7 @@ setopt split_ratio 0.52
 setopt borderless_monocle true
 setopt gapless_monocle true
 setopt focus_follows_pointer true
-setopt single_monocle false
+setopt single_monocle true
 
 # plank
 bspc rule -a Plank layer=above manage=on border=off
