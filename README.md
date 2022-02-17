@@ -42,36 +42,18 @@ For zsh I use powerlevel 10k, I include the configuration in `~/.p10k.zsh`
 
 ## Installation
 
-To install you can use this command that move your old
-configs to `foldername.old` and then copy the new folder:
+I create an autoinstaller that download the files, copy it on your system folders
+and install the dependencies
+
+> This installer only works in an arch-based system because the dependencies installation works with yay and pacman
+
+To use it, execute this command:
 
 ```sh
-curl -sL https://raw.githubusercontent.com/AlphaTechnolog/bspwm-dotfiles-v2/main/install-folders.sh | bash
+curl https://raw.githubusercontent.com/AlphaTechnolog/bspwm-dotfiles-v2/main/install.sh | bash
 ```
 
-It has the next bash script content:
-
-```sh
-git clone https://github.com/AlphaTechnolog/bspwm-dotfiles-v2 ~/.bspwm-dotfiles
-cd ~/.bspwm-dotfiles
-declare -a folders=('.config' '.local/share' '.local/bin')
-for folder in ${folders[@]}; do
-  if ! test -d ~/$folder; then
-    mkdir -p ~/$folder
-  fi
-  for subfolder in $(ls ./$folder); do
-    if test -d ~/$folder/$subfolder; then
-      echo "Moving $HOME/$folder/$subfolder -> $HOME/$folder/$subfolder.old"
-      mv ~/$folder/$subfolder ~/$folder/$subfolder.old
-    fi
-    if test -f ~/$folder/$subfolder; then
-      echo "Moving $HOME/$folder/$subfolder -> $HOME/$folder/$subfolder.old"
-      mv ~/$folder/$subfolder ~/$folder/$subfolder.old
-    fi
-    cp -r ./$folder/$subfolder ~/$folder/
-  done
-done
-```
+> It will backup your old configs, if it found it folders
 
 ## Example wallpapers
 
