@@ -27,12 +27,18 @@ I am using Arch Linux, but I expect you have it, to make all work
 - polybar
 - picom
 - feh
-- zsh
-- oh my zsh (I include the configuration file for it `~/.zshrc`)
-- powerlevel 10k (I include the configuration file for it `~/.p10k.zsh`)
 - bat
 - exa
 - dunst
+
+## Shells
+
+I use `bash` and `zsh` I include the configuration for it and it's frameworks
+
+- bash: oh my bash `~/.bashrc`
+- zsh: oh my zsh `~/.zshrc`
+
+For zsh I use powerlevel 10k, I include the configuration in `~/.p10k.zsh`
 
 ## Installation
 
