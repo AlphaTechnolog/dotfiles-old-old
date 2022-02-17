@@ -76,9 +76,30 @@ check_deps () {
 }
 
 copy_files () {
-  info "Copying the files to your system using the install_folders.sh script"
-  cmd "bash $HOME/install-folders.sh"
-  success "Command executed successfully"
+  info "Copying the files to your system"
+  cd $HOME/.bspwm-dotfiles
+  declare -a folders=('.config' '.local/share' '.local/bin')
+  for folder in ${folders[@]}; do
+    if ! test -d $HOME/$folder; then
+      mkdir -p $HOME/$folder
+    fi
+    # looping each directory with folder in ~/.bspwm-dotfiles
+    for subfolder in $(ls ./$folder); do
+      # checking if a exists a folder with the same name of this item subitem
+      # e.g: checking for exists a folder alacritty in ~/.config because I am iterating
+      # in ~/.bspwm-dotfiles/.config and I found a folder named alacritty
+      if test -d $HOME/$folder/$subfolder; then
+        warning "Moving $HOME/$folder/$subfolder -> $HOME/$folder/$subfolder.old"
+        mv $HOME/$folder/$subfolder $HOME/$folder/$subfolder.old
+      fi
+      if test -f $HOME/$folder/$subfolder; then
+        warning "Moving $HOME/$folder/$subfolder -> $HOME/$folder/$subfolder.old"
+        mv $HOME/$folder/$subfolder $HOME/$folder/$subfolder.old
+      fi
+      cp -r ./$folder/$subfolder $HOME/$folder/
+    done
+  done
+  success "Done, copied the files successfully"
 }
 
 install_dependencies () {
@@ -94,7 +115,7 @@ main () {
   download_dotfiles
   install_dependencies
   copy_files
-  warning "More functionalities like auto shell setup coming soon..."
+  warning "More functionalities like auto shell setup and auto bspwm monitors fixes coming soon..."
   success "Dotfiles installed successfully restart your system and login with bspwm to see changes"
 }
 
