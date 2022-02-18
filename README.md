@@ -73,7 +73,7 @@ bash install-dotbot.sh
 
 And that's all
 
-## Example wallpapers
+## Wallpapers
 
 I have a lot of wallpapers, it are published in [.sample-wallpapers](https://github.com/AlphaTechnolog/bspwm-dotfiles-v2/tree/main/.sample-wallpapers) folder
 
