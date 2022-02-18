@@ -5,12 +5,9 @@
     command: bash dotbot-tools/install-dependencies.sh
     description: Installing dependencies (only available if you has an arch-based system)
     stdout: true
+    stdin: true
+    stderr: true
     quiet: true
-
-- defaults:
-  link:
-    create: true
-    relink: true
 
 - clean: ['~', ~/.config', '~/.local/share']
 
@@ -19,10 +16,13 @@
   - ~/.local/share
 
 - link:
-  ~/.config/:
-    glob: true
-    path: .config/*
-  ~/.local/share: .local/share/*
-  ~/.bashrc: .bashrc
-  ~/.zshrc: .zshrc
-  ~/.p10k.zsh: .p10k.zsh
+    ~/.config/:
+      glob: true
+      path: .config/*
+    ~/.local/share/:
+      create: true
+      path: .local/share/**
+      glob: true
+    ~/.bashrc: .bashrc
+    ~/.zshrc: .zshrc
+    ~/.p10k.zsh: .p10k.zsh
