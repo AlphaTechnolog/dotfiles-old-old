@@ -36,6 +36,7 @@ I am using Arch Linux, but I expect you have it, to make all work
 I use `bash` and `zsh` I include the configuration for it and it's frameworks
 
 - bash: oh my bash `~/.bashrc`
+  - Subrequirements: pfetch
 - zsh: oh my zsh `~/.zshrc`
 
 For zsh I use powerlevel 10k, I include the configuration in `~/.p10k.zsh`
