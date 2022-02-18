@@ -108,6 +108,15 @@ install_dependencies () {
   success "Installed base dependencies successfully"
 }
 
+install_oh_my_bash () {
+  info "Setting bash as default shell"
+  cmd "sudo usermod --shell /bin/bash $(whoami)"
+  success "Done"
+  info "Installing oh my bash"
+  cmd "bash -c '$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)'"
+  success "Done"
+}
+
 main () {
   banner
   check_deps
@@ -115,6 +124,7 @@ main () {
   download_dotfiles
   install_dependencies
   copy_files
+  install_oh_my_bash
   warning "More functionalities like auto shell setup and auto bspwm monitors fixes coming soon..."
   success "Dotfiles installed successfully restart your system and login with bspwm to see changes"
 }
