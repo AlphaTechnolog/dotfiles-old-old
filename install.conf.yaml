@@ -18,11 +18,16 @@
 - create:
   - ~/.config
   - ~/.local/share
+  - ~/.local/bin
 
 - link:
     ~/.config/:
       glob: true
       path: .config/*
+    ~/.local/bin/:
+      create: true
+      path: .local/bin/**
+      glob: true
     ~/.local/share/:
       create: true
       path: .local/share/**
