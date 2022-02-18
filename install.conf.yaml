@@ -1,6 +1,10 @@
 - shell:
   - [git submodule update --init --recursive, Installing modules]
-  - [bash dotbot-tools/respald-folders.sh, Checking for old dotfiles and trying to copy it to another directory]
+  -
+    command: bash dotbot-tools/respald-folders.sh
+    description: Checking for old dotfiles folders and trying to respald it
+    stdout: true
+    quiet: true
   -
     command: bash dotbot-tools/install-dependencies.sh
     description: Installing dependencies (only available if you has an arch-based system)
@@ -9,7 +13,7 @@
     stderr: true
     quiet: true
 
-- clean: ['~', ~/.config', '~/.local/share']
+- clean: ['~', '~/.config', '~/.local/share']
 
 - create:
   - ~/.config

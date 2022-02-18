@@ -13,6 +13,5 @@ for folder in ${folders[@]}; do
       echo "Moving $HOME/$folder/$subfolder -> $HOME/$folder/$subfolder.old"
       mv ~/$folder/$subfolder ~/$folder/$subfolder.old
     fi
-    cp -r ./$folder/$subfolder ~/$folder/
   done
 done
