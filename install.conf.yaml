@@ -1,0 +1,24 @@
+- shell:
+  - [git submodule update --init --recursive, Installing modules]
+  - [bash dotbot-tools/respald-folders.sh, Checking for old dotfiles and trying to copy it to another directory]
+  - [bash dotbot-tools/install-dependencies.sh, Trying to install dependencies only available if your system is an arch-based distribution]
+
+- defaults:
+  link:
+    create: true
+    relink: true
+
+- clean: ['~', ~/.config', '~/.local/share']
+
+- create:
+  - ~/.config
+  - ~/.local/share
+
+- link:
+  ~/.config/:
+    glob: true
+    path: .config/*
+  ~/.local/share: .local/share/*
+  ~/.bashrc: .bashrc
+  ~/.zshrc: .zshrc
+  ~/.p10k.zsh: .p10k.zsh
