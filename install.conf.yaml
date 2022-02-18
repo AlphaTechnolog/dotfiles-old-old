@@ -1,17 +1,15 @@
+- defaults:
+    shell:
+      quiet: true
+      stdout: true
+      stdin: true
+      stderr: true
+
 - shell:
   - [git submodule update --init --recursive, Installing modules]
-  -
-    command: bash dotbot-tools/respald-folders.sh
-    description: Checking for old dotfiles folders and trying to respald it
-    stdout: true
-    quiet: true
-  -
-    command: bash dotbot-tools/install-dependencies.sh
-    description: Installing dependencies (only available if you has an arch-based system)
-    stdout: true
-    stdin: true
-    stderr: true
-    quiet: true
+  - [bash dotbot-tools/respald-folders.sh, Checking for old dotfiles folders and trying to respald it]
+  - [bash dotbot-tools/install-dependencies.sh, Installing dependencies (only available if you has an arch-based system)]
+  - [bash dotbot-tools/setup-bash.sh, Installing oh my bash and configuring the shell for appropiate working]
 
 - clean: ['~', '~/.config', '~/.local/share']
 
@@ -32,3 +30,5 @@
     ~/.bashrc: .bashrc
     ~/.zshrc: .zshrc
     ~/.p10k.zsh: .p10k.zsh
+
+- shell:
