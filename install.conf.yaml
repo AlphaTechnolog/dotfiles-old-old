@@ -24,10 +24,7 @@
     ~/.config/:
       glob: true
       path: .config/*
-    ~/.local/bin/:
-      create: true
-      path: .local/bin/**
-      glob: true
+    ~/.local/bin/spotify_status.py: .local/bin/spotify_status.py
     ~/.local/share/:
       create: true
       path: .local/share/**
