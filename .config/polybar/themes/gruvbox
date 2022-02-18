@@ -20,7 +20,7 @@ background-alt = #d1c4e99
 foreground = #ebdbb2
 foreground-alt = #282828
 primary = #b8ba25
-secondary = #fb4833
+secondary = #448488
 alert = #fabc2e
 
 cyan = #83a597
@@ -33,7 +33,7 @@ magenta = #d3859a
 white = #ebdbb2
 pink = #b16185
 blue = #448488
-black = #272727
+black = #3c3836
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -116,15 +116,15 @@ content-font = 2
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/bspwm]
 type = internal/bspwm
-ws-icon-0 = I;%{F#FAE3B0}  
-ws-icon-1 = II;%{F#96CDFB}   
-ws-icon-2 = III;%{F#F28FAD}    
-ws-icon-3 = IV;%{F#89DCEB}
-ws-icon-4 = V;%{F#c0caf5}
-ws-icon-5 = VI;%{F#FAE3B0}
-ws-icon-6 = VII;%{F#ABE9B3}
-ws-icon-7 = VIII;%{F#89DCEB}ﭮ
-ws-icon-8 = IX;%{F#F5C2E7}
+ws-icon-0 = I;%{F#fabc2e}  
+ws-icon-1 = II;%{F#448488}   
+ws-icon-2 = III;%{F#8ec07b}    
+ws-icon-3 = IV;%{F#83a597}
+ws-icon-4 = V;%{F#ebdbb2}
+ws-icon-5 = VI;%{F#fabc2e}
+ws-icon-6 = VII;%{F#83a597}
+ws-icon-7 = VIII;%{F#448488}ﭮ
+ws-icon-8 = IX;%{F#d3859a}
 ws-icon-default = ♟
 
 label-focused = "%icon%"

@@ -31,6 +31,8 @@ I am using Arch Linux, but I expect you have it, to make all work
 - exa
 - dunst
 
+> This requirements will be installed with the autoinstaller
+
 ## Shells
 
 I use `bash` and `zsh` I include the configuration for it and it's frameworks
@@ -39,16 +41,19 @@ I use `bash` and `zsh` I include the configuration for it and it's frameworks
   - Subrequirements: pfetch
 - zsh: oh my zsh `~/.zshrc`
 
-For zsh I use powerlevel 10k, I include the configuration in `~/.p10k.zsh`
+For zsh I use powerlevel 10k, I include the configuration in `~/.p10k.zsh` and
+the configuration for zsh `~/.zshrc`
 
 ## Installation
 
-### Auto install script
+- The installers only works in an arch-based system because dependencies are installed with pacman and yay
+- The installers only install bash (oh my bash) configuration, but configurations for oh my zsh and zsh and powerlevel10k are included.
+- The installers may copy your old configurations files to `filename.old` if it found it's folders, it don't delete your old configuration folders
+
+### Autoinstall script
 
 I create an autoinstaller that download the files, copy it on your system folders
 and install the dependencies
-
-> This installer only works in an arch-based system because the dependencies installation works with yay and pacman
 
 To use it, execute this command:
 
@@ -68,14 +73,20 @@ bash install-dotbot.sh
 
 And that's all
 
-> It will backup your old configs, if it found it folders
-
 ## Example wallpapers
 
 ![catppuccin-cat](./.sample-wallpapers/catppuccin-cat.png)
 ![magenta-blue](./.sample-wallpapers/magenta-blue.png)
 
 > You can get more catppuccin-based wallpapers [here](https://github.com/catppuccin/wallpapers)
+> See more wallpapers in [.sample-wallpapers](https://github.com/AlphaTechnolog/bspwm-dotfiles-v2/tree/main/.sample-wallpapers)
+
+## Galery
+
+![catppuccin](./.misc/showcase/catppuccin.png)
+![tokyonight](./.misc/showcase/tokyonight.png)
+![gruvbox](./.misc/showcase/gruvbox.png)
+![material-ocean](./.misc/showcase/material-ocean.png)
 
 ## Dedicated to
 
