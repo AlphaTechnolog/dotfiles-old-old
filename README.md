@@ -97,7 +97,7 @@ And that's all
 
 ## Thanks to
 
-- Akali
-- Dlltsuki
-- Bleyom (He has a very beautiful rices, in his [profile](https://github.com/Bleyom))
-- KOK41
+- Akali (To help me with a lot of solutions and feedback <3)
+- Dlltsuki (To help me a lot with feedback and the dotbot installation <3)
+- Bleyom (To help me with some inspiration and feedback <3) (He has a very beautiful rices, in his [profile](https://github.com/Bleyom))
+- KOK41 (To help me with some ideas and concepts <3)
