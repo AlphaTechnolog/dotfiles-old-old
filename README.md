@@ -43,6 +43,8 @@ For zsh I use powerlevel 10k, I include the configuration in `~/.p10k.zsh`
 
 ## Installation
 
+### Auto install script
+
 I create an autoinstaller that download the files, copy it on your system folders
 and install the dependencies
 
@@ -53,6 +55,18 @@ To use it, execute this command:
 ```sh
 curl https://raw.githubusercontent.com/AlphaTechnolog/bspwm-dotfiles-v2/main/install.sh | bash
 ```
+
+## Dotbot
+
+You can install with dotbot
+
+```sh
+git clone https://github.com/AlphaTechnolog/bspwm-dotfiles-v2 ~/.bspwm-dotfiles
+cd ~/.bspwm-dotfiles
+bash install-dotbot.sh
+```
+
+And that's all
 
 > It will backup your old configs, if it found it folders
 
