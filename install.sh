@@ -128,6 +128,14 @@ install_oh_my_bash () {
   success "Done, installed oh my bash successfully"
 }
 
+setup_bash () {
+  info "Updating bash config to your user"
+  cat $HOME/.bashrc | sed "s/gabriel/$USER/g" > .tmp-bashrc
+  rm $HOME/.bashrc
+  mv ./.tmp-bashrc $HOME/.bashrc
+  success "Done"
+}
+
 main () {
   banner
   check_deps
@@ -135,6 +143,7 @@ main () {
   install_dependencies
   install_oh_my_bash
   copy_files
+  setup_bash
   warning "More functionalities like auto bspwm monitors fixes coming soon..."
   success "Dotfiles installed successfully restart your system and login with bspwm to see changes"
 }
