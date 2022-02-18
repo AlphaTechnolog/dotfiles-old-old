@@ -79,6 +79,7 @@ And that's all
 ![magenta-blue](./.sample-wallpapers/magenta-blue.png)
 
 > You can get more catppuccin-based wallpapers [here](https://github.com/catppuccin/wallpapers)
+
 > See more wallpapers in [.sample-wallpapers](https://github.com/AlphaTechnolog/bspwm-dotfiles-v2/tree/main/.sample-wallpapers)
 
 ## Galery
