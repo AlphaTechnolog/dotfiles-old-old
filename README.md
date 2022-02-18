@@ -63,7 +63,7 @@ curl https://raw.githubusercontent.com/AlphaTechnolog/bspwm-dotfiles-v2/main/ins
 
 ## Dotbot
 
-You can install with dotbot
+You can install with dotbot too with three simple bash-script commands
 
 ```sh
 git clone https://github.com/AlphaTechnolog/bspwm-dotfiles-v2 ~/.bspwm-dotfiles
