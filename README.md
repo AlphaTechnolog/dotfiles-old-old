@@ -93,3 +93,10 @@ And that's all
 ## Dedicated to
 
 [my brother](https://github.com/Jags1906) <3
+
+## Thanks to
+
+- Akali
+- Dlltsuki
+- Bleyom (He has a very beautiful rices, in her [profile](https://github.com/Bleyom))
+- KOK41
