@@ -75,12 +75,9 @@ And that's all
 
 ## Example wallpapers
 
-![catppuccin-cat](./.sample-wallpapers/catppuccin-cat.png)
-![magenta-blue](./.sample-wallpapers/magenta-blue.png)
+I have a lot of wallpapers, it are published in [.sample-wallpapers](https://github.com/AlphaTechnolog/bspwm-dotfiles-v2/tree/main/.sample-wallpapers) folder
 
 > You can get more catppuccin-based wallpapers [here](https://github.com/catppuccin/wallpapers)
-
-> See more wallpapers in [.sample-wallpapers](https://github.com/AlphaTechnolog/bspwm-dotfiles-v2/tree/main/.sample-wallpapers)
 
 ## Galery
 
@@ -97,6 +94,7 @@ And that's all
 
 ## Thanks to
 
+- [Catppuccin community](https://github.com/catppuccin) (To help me with a lot of inspiration and feedback, in the discord server)
 - Akali (To help me with a lot of solutions and feedback <3)
 - Dlltsuki (To help me a lot with feedback and the dotbot installation <3)
 - Bleyom (To help me with some inspiration and feedback <3) (He has a very beautiful rices, in his [profile](https://github.com/Bleyom))
