@@ -1,7 +1,11 @@
 - shell:
   - [git submodule update --init --recursive, Installing modules]
   - [bash dotbot-tools/respald-folders.sh, Checking for old dotfiles and trying to copy it to another directory]
-  - [bash dotbot-tools/install-dependencies.sh, Trying to install dependencies only available if your system is an arch-based distribution]
+  -
+    command: bash dotbot-tools/install-dependencies.sh
+    description: Installing dependencies (only available if you has an arch-based system)
+    stdout: true
+    quiet: true
 
 - defaults:
   link:

@@ -11,10 +11,10 @@ install_yay () {
 }
 
 main () {
-  if ! command -v pacman; then
+  if ! command -v pacman 2>&1 > /dev/null; then
     error "Pacman is not found, skiping"
   fi
-  if ! command -v yay; then
+  if ! command -v yay 2>&1 > /dev/null; then
     error "Yay is not found, trying to install yay"
     install_yay
   fi
