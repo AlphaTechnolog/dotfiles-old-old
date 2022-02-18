@@ -98,5 +98,5 @@ And that's all
 
 - Akali
 - Dlltsuki
-- Bleyom (He has a very beautiful rices, in her [profile](https://github.com/Bleyom))
+- Bleyom (He has a very beautiful rices, in his [profile](https://github.com/Bleyom))
 - KOK41
