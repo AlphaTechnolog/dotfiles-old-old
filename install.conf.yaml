@@ -27,9 +27,6 @@
       create: true
       path: .local/share/**
       glob: true
-    ~/.bashrc: .bashrc
-    ~/.zshrc: .zshrc
-    ~/.p10k.zsh: .p10k.zsh
 
 - shell:
   - [bash dotbot-tools/setup-bash.sh, Fixing bash configuration to an appropiate working with oh my bash]
