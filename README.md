@@ -88,6 +88,8 @@ And that's all
 ![gruvbox](./.misc/showcase/gruvbox.png)
 ![material-ocean](./.misc/showcase/material-ocean.png)
 
+> A tool to change themes is in development :D
+
 ## Dedicated to
 
 [my brother](https://github.com/Jags1906) <3
