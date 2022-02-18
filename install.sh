@@ -125,6 +125,7 @@ install_oh_my_bash () {
   success "Ok, executing installer (if you enter in a bash prompt type exit to continue with the bspwm-dotfiles installation)"
   sleep 0.5
   bash .install-omb.sh
+  rm .install-omb.sh
   success "Done, installed oh my bash successfully"
 }
 
