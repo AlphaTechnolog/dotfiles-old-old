@@ -69,7 +69,7 @@ download_dotfiles () {
 check_deps () {
   declare -a deps=('git')
   for dep in ${deps[@]}; do
-    if ! command -v $dep; then
+    if ! command -v $dep 2>&1 > /dev/null; then
       error "Dependency $dep is required, you must install it"
     fi
   done
@@ -99,6 +99,14 @@ copy_files () {
       cp -r ./$folder/$subfolder $HOME/$folder/
     done
   done
+  declare -a files=('.bashrc' '.zshrc' '.p10k.zsh')
+  for file in ${files[@]}; do
+    if test -f $HOME/$file; then
+      warning "Moving $HOME/$file to $HOME/${file}.old"
+      mv $HOME/$file $HOME/${file}.old
+    fi
+    cp -r ./$file $HOME/$file
+  done
   success "Done, copied the files successfully"
 }
 
@@ -112,20 +120,22 @@ install_oh_my_bash () {
   info "Setting bash as default shell"
   cmd "sudo usermod --shell /bin/bash $(whoami)"
   success "Done"
-  info "Installing oh my bash"
-  cmd "bash -c '$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)'"
-  success "Done"
+  info "Installing oh my bash, downloading installer..."
+  curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -o ./.install-omb.sh
+  success "Ok, executing installer (if you enter in a bash prompt type exit to continue with the bspwm-dotfiles installation)"
+  sleep 0.5
+  bash .install-omb.sh
+  success "Done, installed oh my bash successfully"
 }
 
 main () {
   banner
   check_deps
-  banner
   download_dotfiles
   install_dependencies
-  copy_files
   install_oh_my_bash
-  warning "More functionalities like auto shell setup and auto bspwm monitors fixes coming soon..."
+  copy_files
+  warning "More functionalities like auto bspwm monitors fixes coming soon..."
   success "Dotfiles installed successfully restart your system and login with bspwm to see changes"
 }
 
