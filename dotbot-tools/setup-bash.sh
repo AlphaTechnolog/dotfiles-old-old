@@ -1,15 +1,12 @@
 #!/bin/bash
 
-main () {
-  echo "Configuring bash as default shell"
-  sudo usermod --shell /bin/bash $(whoami)
-  echo "Done, downloading oh my bash installer"
-  curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -o ./.install-omb.sh
-  echo "Ok, executing installer... (if you get an interactive bash prompt, type exit and press enter to continue with the dotfiles installation)"
-  sleep 0.5
-  bash .install-omb.sh
-  rm .install-omb.sh
-  echo "Done, oh my bash installed successfully"
-}
+# Go to bspwm dotfiles directory
+cd $(dirname $0)/..
 
-main
+# Setup!
+if test -f $HOME/.bashrc; then
+  rm $HOME/.bashrc
+fi
+cat ./.bashrc | sed "s/gabriel/$USER/g" > .tmp-bashrc.sh
+mv ./.tmp-bashrc.sh $HOME/.bashrc
+echo "Done, bash is READY to START GIVING YOUR AWESOME COMMANDS!"
