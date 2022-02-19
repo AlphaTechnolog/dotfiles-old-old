@@ -43,8 +43,8 @@ super + g
 #
 
 # set the window state
-super + {t,shift + t,space,f}
-    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {t,space,f}
+    bspc node -t {tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -133,3 +133,9 @@ super + p
 
 super + s
     ~/.local/bin/spanish-kb-copier
+
+super + shift + p
+  manette
+
+super + shift + t
+  ~/.local/bin/themer

@@ -1,0 +1,86 @@
+#!/bin/bash
+
+get_theme () {
+  local choices='catppuccin tokyonight gruvbox material_ocean'
+  local theme="$(rofi -sep "|" -dmenu -i -p '' <<< $(echo "$choices" | tr ' ' '|'))"
+  if [[ $theme == "" ]]; then
+    exit 1
+  fi
+
+  echo $theme
+}
+
+delete_actual_files () {
+  rm $HOME/.config/kitty/kitty.conf
+  rm $HOME/.config/dunst/dunstrc
+  rm $HOME/.config/polybar/config
+  rm $HOME/.config/rofi/config.rasi
+}
+
+setup_theme_catppuccin () {
+  delete_actual_files
+  cp -r $HOME/.config/kitty/kitty-catppuccin.conf $HOME/.config/kitty/kitty.conf
+  cp -r $HOME/.config/dunst/themes/catppuccin/dunstrc $HOME/.config/dunst/dunstrc
+  cp -r $HOME/.config/polybar/themes/catppuccin $HOME/.config/polybar/config
+  cp -r $HOME/.config/rofi/config-catppuccin.rasi $HOME/.config/rofi/config.rasi
+  echo catppuccin > $HOME/.actual-theme
+  echo "Done, reloading system"
+  bspc wm -r
+  killall -q dunst
+  dunst &
+  killall -q kitty
+}
+
+setup_theme_tokyonight () {
+  delete_actual_files
+  cp -r $HOME/.config/kitty/kitty-tokyonight.conf $HOME/.config/kitty/kitty.conf
+  cp -r $HOME/.config/dunst/themes/tokyonight/dunstrc $HOME/.config/dunst/dunstrc
+  cp -r $HOME/.config/polybar/themes/tokyonight $HOME/.config/polybar/config
+  cp -r $HOME/.config/rofi/config-tokyonight.rasi $HOME/.config/rofi/config.rasi
+  echo tokyonight > $HOME/.actual-theme
+  echo "Done, reloading system"
+  bspc wm -r
+  killall -q dunst
+  dunst &
+  killall -q kitty
+}
+
+setup_theme_gruvbox () {
+  delete_actual_files
+  cp -r $HOME/.config/kitty/kitty-gruvbox.conf $HOME/.config/kitty/kitty.conf
+  cp -r $HOME/.config/dunst/themes/gruvbox/dunstrc $HOME/.config/dunst/dunstrc
+  cp -r $HOME/.config/polybar/themes/gruvbox $HOME/.config/polybar/config
+  cp -r $HOME/.config/rofi/config-gruvbox.rasi $HOME/.config/rofi/config.rasi
+  echo gruvbox > $HOME/.actual-theme
+  echo "Done, reloading system"
+  bspc wm -r
+  killall -q dunst
+  dunst &
+  killall -q kitty
+}
+
+setup_theme_material_ocean () {
+  delete_actual_files
+  cp -r $HOME/.config/kitty/kitty-material-ocean.conf $HOME/.config/kitty/kitty.conf
+  cp -r $HOME/.config/dunst/themes/material-ocean/dunstrc $HOME/.config/dunst/dunstrc
+  cp -r $HOME/.config/polybar/themes/material-ocean $HOME/.config/polybar/config
+  cp -r $HOME/.config/rofi/config-material-ocean.rasi $HOME/.config/rofi/config.rasi
+  echo material_ocean > $HOME/.actual-theme
+  echo "Done, reloading system"
+  bspc wm -r
+  killall -q dunst
+  dunst &
+  killall -q kitty
+}
+
+main () {
+  local theme=$(get_theme)
+  echo "Configuring system to use $theme..."
+  notify-send "Setting $theme as theme..."
+  sleep 1
+  setup_theme_${theme}
+  sleep 1
+  notify-send "Done!"
+}
+
+main

@@ -12,8 +12,15 @@ picom -b
 # notification manager (I include configuration for dunst)
 dunst &
 
-# Change the wallpaper path to your appropiate wallpaper path
-feh --bg-fill ~/.bspwm-dotfiles/.sample-wallpapers/catppuccin-city.jpg
+# Wallpapers configuration (based in the selected theme)
+source $HOME/.config/bspwm/wallpapers.sh
+if ! test -f $HOME/.actual-theme; then
+  echo catppuccin > $HOME/.actual-theme
+fi
+theme=$(cat $HOME/.actual-theme)
+# this calls to the wallpaper function
+wallpaper=$(wall_$theme)
+feh --bg-fill $wallpaper
 
 # don't remove this please
 sxhkd &
