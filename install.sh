@@ -116,24 +116,9 @@ install_dependencies () {
   success "Installed base dependencies successfully"
 }
 
-install_oh_my_bash () {
+setup_bash () {
   info "Setting bash as default shell"
   cmd "sudo usermod --shell /bin/bash $(whoami)"
-  success "Done"
-  info "Installing oh my bash, downloading installer..."
-  curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -o ./.install-omb.sh
-  success "Ok, executing installer (if you enter in a bash prompt type exit to continue with the bspwm-dotfiles installation)"
-  sleep 0.5
-  bash .install-omb.sh
-  rm .install-omb.sh
-  success "Done, installed oh my bash successfully"
-}
-
-setup_bash () {
-  info "Updating bash config to your user"
-  cat $HOME/.bashrc | sed "s/gabriel/$USER/g" > .tmp-bashrc
-  rm $HOME/.bashrc
-  mv ./.tmp-bashrc $HOME/.bashrc
   success "Done"
 }
 
@@ -142,7 +127,6 @@ main () {
   check_deps
   download_dotfiles
   install_dependencies
-  install_oh_my_bash
   copy_files
   setup_bash
   warning "More functionalities like auto bspwm monitors fixes coming soon..."
