@@ -18,7 +18,7 @@ main () {
     error "Yay is not found, trying to install yay"
     install_yay
   fi
-  yay -S ttf-iosevka-nerd nerd-fonts-source-code-pro nerd-fonts-jetbrains-mono kitty alacritty rofi sxhkd bspwm polybar picom feh bat exa dunst pfetch --noconfirm
+  yay -S ttf-iosevka-nerd nerd-fonts-source-code-pro nerd-fonts-jetbrains-mono kitty alacritty rofi sxhkd bspwm polybar picom feh bat exa dunst pfetch starship --noconfirm
 }
 
 main

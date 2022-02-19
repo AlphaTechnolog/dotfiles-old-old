@@ -30,6 +30,7 @@ I am using Arch Linux, but I expect you have it, to make all work
 - bat
 - exa
 - dunst
+- starship
 
 > This requirements will be installed with the autoinstaller
 

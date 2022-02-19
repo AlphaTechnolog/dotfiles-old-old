@@ -27,6 +27,7 @@
       create: true
       path: .local/share/**
       glob: true
+    ~/.zshrc: .zshrc
 
 - shell:
   - [bash dotbot-tools/setup-bash.sh, Fixing bash configuration to an appropiate working with oh my bash]
