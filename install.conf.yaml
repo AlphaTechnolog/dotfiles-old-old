@@ -9,7 +9,6 @@
   - [git submodule update --init --recursive, Installing modules]
   - [bash dotbot-tools/respald-folders.sh, Checking for old dotfiles folders and trying to respald it]
   - [bash dotbot-tools/install-dependencies.sh, Installing dependencies (only available if you has an arch-based system)]
-  - [bash dotbot-tools/install-omb.sh, Installing oh my bash]
 
 - clean: ['~', '~/.config', '~/.local/share']
 
