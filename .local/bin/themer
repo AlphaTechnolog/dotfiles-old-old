@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# 1 = true && 0 = false
+NVCODARK_SUPPORT=1
+
 get_theme () {
   local choices='catppuccin tokyonight gruvbox material_ocean'
   local theme="$(rofi -sep "|" -dmenu -i -p '' <<< $(echo "$choices" | tr ' ' '|'))"
@@ -81,6 +84,23 @@ main () {
   setup_theme_${theme}
   sleep 1
   notify-send "Done!"
+
+  if [[ $NVCODARK_SUPPORT == 1 ]]; then
+    if [[ $theme == 'material_ocean' ]]; then
+      theme='material'
+    fi
+    local basepath="$HOME/.config/nvim"
+    local file="${basepath}/lua/rc.lua"
+    if ! test -f $file; then
+      >&2 echo "Warn: NvCoDark support is enabled but rc.lua file is not found in $basepath/lua"
+      exit 1
+    fi
+    cat $file | \
+      sed "s/config\.colorscheme = '.*'/config\.colorscheme = '$theme'/g" | \
+      sed "7s/theme = '.*'/theme = '$theme'/g" > .tmp-rc.lua
+    rm $HOME/.config/nvim/lua/rc.lua
+    mv ./.tmp-rc.lua $HOME/.config/nvim/lua/rc.lua
+  fi
 }
 
 main
