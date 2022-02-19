@@ -99,7 +99,7 @@ copy_files () {
       cp -r ./$folder/$subfolder $HOME/$folder/
     done
   done
-  declare -a files=('.bashrc' '.zshrc' '.p10k.zsh')
+  declare -a files=('.bashrc' '.zshrc')
   for file in ${files[@]}; do
     if test -f $HOME/$file; then
       warning "Moving $HOME/$file to $HOME/${file}.old"
