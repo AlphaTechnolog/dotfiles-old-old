@@ -31,24 +31,22 @@ I am using Arch Linux, but I expect you have it, to make all work
 - exa
 - dunst
 - starship
+- pfetch
 
 > This requirements will be installed with the autoinstaller
 
 ## Shells
 
-I use `bash` and `zsh` I include the configuration for it and it's frameworks
+I use `bash`, `zsh` and `fish`. I use this shells, but in combination with starship.
 
-- bash: oh my bash `~/.bashrc`
-  - Subrequirements: pfetch
-- zsh: oh my zsh `~/.zshrc`
-
-For zsh I use powerlevel 10k, I include the configuration in `~/.p10k.zsh` and
-the configuration for zsh `~/.zshrc`
+- bash: bash + starship `~/.bashrc`
+- zsh: zsh + starship `~/.zshrc`
+- fish: fish + starship `~/.config/fish/config.fish`
 
 ## Installation
 
 - The installers only works in an arch-based system because dependencies are installed with pacman and yay
-- The installers only install bash (oh my bash) configuration, but configurations for oh my zsh and zsh and powerlevel10k are included.
+- The installers setup bash as default shell, but configuration with starship are created too for `fish` and `zsh`
 - The installers may copy your old configurations files to `filename.old` if it found it's folders, it don't delete your old configuration folders
 
 ### Autoinstall script
