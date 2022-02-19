@@ -22,6 +22,7 @@
       glob: true
       path: .config/*
     ~/.local/bin/spotify_status.py: .local/bin/spotify_status.py
+    ~/.local/bin/themer: .local/bin/themer
     ~/.local/share/:
       create: true
       path: .local/share/**
