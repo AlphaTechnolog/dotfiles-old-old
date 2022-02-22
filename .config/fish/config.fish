@@ -26,3 +26,6 @@ set fish_color_quote brgreen
 
 # prompt
 starship init fish | source
+
+# startup
+pfetch
