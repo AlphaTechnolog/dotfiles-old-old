@@ -15,3 +15,7 @@ wall_gruvbox () {
 wall_material_ocean () {
   echo $HOME/.bspwm-dotfiles/.sample-wallpapers/material-ocean.jpg
 }
+
+wall_onedark () {
+  echo $HOME/.bspwm-dotfiles/.sample-wallpapers/onedark.png
+}

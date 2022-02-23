@@ -12,13 +12,14 @@ function setopt () {
 }
 
 # borders and gaps
-setopt border_width 0
+# setopt border_width 1 # uncomment to use borders
+# setopt border_radius 15 # only works using bspwm-rounded verrsion of bspwm
 setopt window_gap 12
 
 # borders colors
 BORDER_THEME='catppuccin'
 load_border_theme() {
-  name=${1}
+  local name=${1}
   if test -f $ROOT/borders-themes/$name.sh; then
     bash $ROOT/borders-themes/$name.sh
   fi
@@ -29,8 +30,12 @@ load_border_theme "$BORDER_THEME"
 setopt split_ratio 0.52
 setopt borderless_monocle true
 setopt gapless_monocle true
-setopt focus_follows_pointer true
 setopt single_monocle true
+
+# pointer
+setopt focus_follows_pointer true
+setopt pointer_follows_focus true
+setopt pointer_follows_monitor true
 
 # plank
 bspc rule -a Plank layer=above manage=on border=off

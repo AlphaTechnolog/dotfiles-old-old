@@ -13,14 +13,14 @@ separator_height = 2
 padding = 8
 horizontal_padding = 13
 frame_width = 8
-frame_color = "#0c0c1f"
-separator_color = "#7878E7"
+frame_color = "#1e222a"
+separator_color = "#1e2127"
 
 font = Inconsolata Bold 10
 
 line_height = 0
 markup = full
-format = "<span size='x-large' font_desc='Inconsolata 11' weight='bold' foreground='#96CDFB'>%s</span>\n\n%b"
+format = "<span size='x-large' font_desc='Inconsolata 11' weight='bold' foreground='#61afef'>%s</span>\n\n%b"
 alignment = center
 
 idle_threshold = 120
@@ -55,20 +55,20 @@ context = ctrl+shift+period
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#0c0c1f"
-    foreground = "#B0BEC5"
+    background = "#1e222a"
+    foreground = "#D9E0EE"
     timeout = 5 
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#0c0c1f"
-    foreground = "#B0BEC5"
+    background = "#1e222a"
+    foreground = "#D9E0EE"
     timeout = 5
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#0c0c1f"
-    foreground = "#B0BEC5"
+    background = "#1e222a"
+    foreground = "#D9E0EE"
     timeout = 120

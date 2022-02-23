@@ -15,25 +15,25 @@
 ;   \____\___/|_____\___/|_| \_\____/ 
                                     
 [colors]
-background = #0c0c1f
+background = #1e222a
 background-alt = #d1c4e99
-foreground = #B0BEC5
-foreground-alt = #0c0c1f
-primary = #82AAFF
-secondary = #7878E7
-alert = #FFFFFF
+foreground = #abb2bf
+foreground-alt = #1e222a
+primary = #61afef
+secondary = #98c379
+alert = #e06c75
 
-cyan = #7878E7
-aqua = #82AAFF
-red = #E97A7A
-yellow = #D6B295
-green = #ADCEA1
-orange = #D6B295
-magenta = #C792EA
-white = #FFFFFF
-pink = #C792EA
-blue = #7878E7
-black = #0a0a1a
+cyan = #56b6c2
+aqua = #98c379
+red = #e06c75
+yellow = #d19a66
+green = #98c379
+orange = #d19a66
+magenta = #c678dd
+white = #828791
+pink = #c678dd
+blue = #61afef
+black = #282c34
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -116,15 +116,15 @@ content-font = 2
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/bspwm]
 type = internal/bspwm
-ws-icon-0 = I;%{F#d6b295}  
-ws-icon-1 = II;%{F#82aaff}   
-ws-icon-2 = III;%{F#f7768e}    
-ws-icon-3 = IV;%{F#7878e7}
-ws-icon-4 = V;%{F#FFFFFF}
-ws-icon-5 = VI;%{F#d6b295}
-ws-icon-6 = VII;%{F#adcea1}
-ws-icon-7 = VIII;%{F#7878e7}ﭮ
-ws-icon-8 = IX;%{F#c792ea}
+ws-icon-0 = I;%{F#d19a66}  
+ws-icon-1 = II;%{F#61afef}   
+ws-icon-2 = III;%{F#e06c75}    
+ws-icon-3 = IV;%{F#56b6c2}
+ws-icon-4 = V;%{F#828791}
+ws-icon-5 = VI;%{F#d19a66}
+ws-icon-6 = VII;%{F#98c379}
+ws-icon-7 = VIII;%{F#56b6c2}ﭮ
+ws-icon-8 = IX;%{F#c678dd}
 ws-icon-default = ♟
 
 label-focused = "%icon%"
@@ -323,7 +323,7 @@ label = "  %output% "
 format-foreground = ${colors.green}
 format-foreground-error = ${colors.red}
 format-background = ${colors.black}
-click-left = kitty -e $SHELL -c 'sudo pacman -Syu --noconfirm'
+click-left = kitty -e $SHELL -c 'sudo pacman -Syu'
 click-right = bspc rule -a \* -o state=floating ; sleep 0.015 ; kitty -e $SHELL -c 'yay -Qu | less'
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -410,7 +410,7 @@ interval = 1
 format-prefix ="      "
 format = <label>
 format-background = ${colors.black}
-format-foreground = ${colors.cyan}
+format-foreground = ${colors.aqua}
 format-padding = 0
 
 exec = ~/.local/bin/spotify_status.py -t 50 -qf '{artist}: {song}'
