@@ -4,7 +4,7 @@
 NVCODARK_SUPPORT=1
 
 get_theme () {
-  local choices='catppuccin tokyonight gruvbox material_ocean'
+  local choices='catppuccin tokyonight gruvbox material_ocean onedark'
   local theme="$(rofi -sep "|" -dmenu -i -p '' <<< $(echo "$choices" | tr ' ' '|'))"
   if [[ $theme == "" ]]; then
     exit 1
@@ -18,6 +18,14 @@ delete_actual_files () {
   rm $HOME/.config/dunst/dunstrc
   rm $HOME/.config/polybar/config
   rm $HOME/.config/rofi/config.rasi
+}
+
+update_pycritty () {
+  local theme=$1
+  if [[ $theme == 'material_ocean' ]]; then
+    theme='material-ocean'
+  fi
+  pycritty -t $theme
 }
 
 setup_theme_catppuccin () {
@@ -76,11 +84,26 @@ setup_theme_material_ocean () {
   killall -q kitty
 }
 
+setup_theme_onedark () {
+  delete_actual_files
+  cp -r $HOME/.config/kitty/kitty-onedark.conf $HOME/.config/kitty/kitty.conf
+  cp -r $HOME/.config/dunst/themes/onedark/dunstrc $HOME/.config/dunst/dunstrc
+  cp -r $HOME/.config/polybar/themes/onedark $HOME/.config/polybar/config
+  cp -r $HOME/.config/rofi/config-onedark.rasi $HOME/.config/rofi/config.rasi
+  echo onedark > $HOME/.actual-theme
+  echo "Done, reloading system"
+  bspc wm -r
+  killall -q dunst
+  dunst &
+  killall -q kitty
+}
+
 main () {
   local theme=$(get_theme)
   echo "Configuring system to use $theme..."
   notify-send "Setting $theme as theme..."
   sleep 1
+  update_pycritty $theme
   setup_theme_${theme}
   sleep 1
   notify-send "Done!"
