@@ -112,7 +112,7 @@ copy_files () {
 
 install_dependencies () {
   info "Installing dependencies for the dotfiles using yay"
-  cmd "yay -S ttf-iosevka-nerd nerd-fonts-source-code-pro nerd-fonts-jetbrains-mono kitty alacritty rofi sxhkd bspwm polybar picom feh bat exa dunst pfetch starship --noconfirm"
+  cmd "yay -S ttf-iosevka-nerd nerd-fonts-source-code-pro nerd-fonts-jetbrains-mono kitty alacritty rofi sxhkd bspwm polybar picom feh bat exa dunst pfetch starship pycritty --noconfirm"
   success "Installed base dependencies successfully"
 }
 
