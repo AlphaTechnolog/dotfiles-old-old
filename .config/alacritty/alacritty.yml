@@ -28,20 +28,17 @@ colors:
   primary:
     background: '#1E1D2F'
     foreground: '#D9E0EE'
-cursor:
-  style:
-    shape: Beam
 env:
   TERM: xterm-256color
 font:
   bold:
-    family: Iosevka Nerd Font
+    family: JetBrains Mono ExtraBold Nerd Font
   italic:
-    family: Iosevka Nerd Font
+    family: JetBrains Mono Medium Nerd Font
   normal:
-    family: Iosevka Nerd Font
-  size: 12.0
+    family: JetBrains Mono Medium Nerd Font
+  size: 10.0
 window:
   padding:
-    x: 20
-    y: 20
+    x: 0
+    y: 0
