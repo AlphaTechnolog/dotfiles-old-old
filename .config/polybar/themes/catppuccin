@@ -55,20 +55,23 @@ border-color = ${colors.background}
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = "Iosevka Nerd Font:size=10;3"
+font-0 = "JetBrainsMono Nerd Font:size=9;3"
 font-1 = "SauceCodePro Nerd Font Mono:size=20;5"
 font-2 = "Material Icons:pixelsize=15;5"
 font-3 = "Sinji:pixelsize=15;5"
 font-4 = "Togalite medium:pixelsize=11;2"
+font-5 = "SauceCodePro Nerd Font Mono:size=16;5"
+font-6 = "JetBrainsMono Nerd Font Mono:size=12;4"
+font-7 = "JetBrainsMono Nerd Font:pixelsize=12;4"
 
 ; MODULES SETUP
-modules-left = left1 bspwm left2
-modules-center = medium1 windowtitle spotify medium2
-modules-right = right1 pacman-updates filesystem cpu memory volume date right2
+modules-left = left1 appmenu left2 dot-alt left1 bspwm left2 dot left1 music_prev music_toggle_pause music_next spotify_status left2
+modules-center = medium1 windowtitle medium2
+modules-right = right1 pacman-updates right2 dot volume dot right1 cpu right2 dot network dot right1 date right2
 
-;tray-position = center
-;tray-padding = 2
-;tray-background = #0063ff
+tray-position = right
+tray-padding = 1
+tray-background = ${colors.background}
 
 cursor-click = pointer
 cursor-scroll = pointer
@@ -77,10 +80,17 @@ line-size = 2
 
 ;separator = %{F#4C566A}|%{F-}
 
+[module/sep]
+type = custom/text
+content-foreground = ${colors.background}
+content-background = ${colors.background}
+content = " "
+content-font = 2
+
 [module/left1]
 type = custom/text
 content-foreground = ${colors.black}
-content = " "
+content = ""
 content-font = 2
 
 [module/left2]
@@ -104,7 +114,7 @@ content-font = 2
 [module/right1]
 type = custom/text
 content-foreground = ${colors.black}
-content = " "
+content = ""
 content-font = 2
 
 [module/right2]
@@ -114,17 +124,36 @@ content = ""
 content-font = 2
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/appmenu]
+type = custom/text
+content-foreground = ${colors.blue}
+content-background = ${colors.black}
+content = ""
+content-font = 2
+click-left = rofi -show drun
+
+[module/dot]
+type = custom/text
+content = 
+content-foreground = ${colors.black}
+content-background = ${colors.background}
+content-font = 6
+
+[module/dot-alt]
+inherit = module/dot
+content-foreground = ${colors.foreground}
+
+[module/dot-alt2]
+inherit = module/dot-alt
+content-background = ${colors.black}
+
 [module/bspwm]
 type = internal/bspwm
 ws-icon-0 = I;%{F#FAE3B0}  
-ws-icon-1 = II;%{F#96CDFB}   
+ws-icon-1 = II;%{F#96CDFB}亂   
 ws-icon-2 = III;%{F#F28FAD}    
-ws-icon-3 = IV;%{F#89DCEB}
-ws-icon-4 = V;%{F#c0caf5}
-ws-icon-5 = VI;%{F#FAE3B0}
-ws-icon-6 = VII;%{F#ABE9B3}
-ws-icon-7 = VIII;%{F#89DCEB}ﭮ
-ws-icon-8 = IX;%{F#F5C2E7}
+ws-icon-3 = IV;%{F#ABE9B3}阮
+ws-icon-4 = V;%{F#96CDFB}ﭮ
 ws-icon-default = ♟
 
 label-focused = "%icon%"
@@ -301,7 +330,7 @@ format-unmounted = <label-unmounted>
 ;   %free%
 ;   %used%
 ; Default: %mountpoint% %percentage_free%%
-label-mounted = "    %percentage_used%% "
+label-mounted = " %percentage_used%%"
 
 ; Available tokens:
 ;   %mountpoint%
@@ -317,9 +346,9 @@ label-mounted-foreground = ${colors.cyan}
 
 [module/pacman-updates]
 type = custom/script
-exec = checkupdates | wc -l
+exec = checkupdates 2>/dev/null | wc -l || echo "0"
 interval = 1000
-label = "  %output% "
+label = " %output%"
 format-foreground = ${colors.green}
 format-foreground-error = ${colors.red}
 format-background = ${colors.black}
@@ -334,29 +363,48 @@ format-background = ${colors.black}
 format-foreground = ${colors.blue}
 format-padding = 1
 label = "  %title%"
-label-maxlen = 27
+label-maxlen = 25
 label-empty = "   free"
 label-separator = " "
 label-empty-foreground = ${colors.blue}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/volume]
 type = internal/pulseaudio
-format-volume =  "<ramp-volume> <label-volume>"
-ramp-volume-0 ="    "
+format-volume = "<ramp-volume> <bar-volume>"
+ramp-volume-0 =""
 ramp-volume-0-font = 1
-ramp-volume-1 ="   墳"
+ramp-volume-1 ="墳"
 ramp-volume-1-font = 1
-ramp-volume-2 ="   墳"
+ramp-volume-2 ="墳"
 ramp-volume-2-font = 1
-format-volume-background = ${colors.black}
-format-volume-foreground = ${colors.magenta}
-format-volume-padding = 1
+ramp-volume-foreground = ${colors.cyan}
+format-volume-background = ${colors.background}
+format-volume-padding = 0
 
 format-muted = <label-muted>
-format-muted-background = ${colors.black} 	
+format-muted-background = ${colors.background} 	
 format-muted-foreground = ${colors.red}
-label-muted ="   "
-format-muted-font = 2
+label-muted =" Muted"
+format-muted-font = 1
+
+bar-volume-width = 10
+bar-volume-gradient = false
+
+bar-volume-indicator = 雷
+bar-volume-indicator-font = 8
+bar-volume-indicator-foreground = ${colors.blue}
+
+bar-volume-fill = 絛
+bar-volume-fill-font = 8
+bar-volume-foreground-0 = ${colors.blue}
+bar-volume-foreground-1 = ${colors.blue}
+bar-volume-foreground-2 = ${colors.blue}
+bar-volume-foreground-3 = ${colors.blue}
+bar-volume-foreground-4 = ${colors.blue}
+
+bar-volume-empty = 絛
+bar-volume-empty-font = 8
+bar-volume-empty-foreground = ${colors.black}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/battery]
 type = internal/battery
@@ -387,30 +435,56 @@ format-full-prefix-font = 1
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/network]
 type = internal/network
-interface = wlo1
+interface = wlp1s0
 format-connected = <label-connected>
-format-connected-prefix = " "
-format-connected-prefix-font = 2
-label-connected = " %essid%%downspeed:9% "
+format-connected-prefix = ""
+format-connected-prefix-font = 1
+label-connected = " %essid%"
 label-connected-font = 1
 
 format-disconnected = <label-disconnected>
-label-disconnected = 
-label-disconnected-font = 2
+format-disconnected-prefix = 
+format-disconnected-prefix-font = 1
+label-disconnected = " Disconnected"
+label-disconnected-font = 1
 
-format-connected-background = ${colors.cyan}
-format-connected-foreground = ${colors.background}
-format-disconnected-background = ${colors.white}
-format-disconnected-foreground = ${colors.background}
+format-connected-background = ${colors.background}
+format-connected-foreground = ${colors.cyan}
+format-disconnected-background = ${colors.background}
+format-disconnected-foreground = ${colors.red}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/spotify]
+[module/music_control]
+type = custom/text
+content-background = ${colors.black}
+content-foreground = ${colors.blue}
+content = "NA"
+content-font = 7
+
+[module/music_prev]
+inherit = module/music_control
+content = "玲 "
+click-left = playerctl previous
+
+[module/music_toggle_pause]
+inherit = module/music_control
+content = " "
+click-left = "playerctl play-pause"
+content-foreground = ${colors.cyan}
+
+[module/music_next]
+inherit = module/music_control
+content = "怜 "
+click-left = playerctl next
+
+[module/spotify_status]
 type = custom/script
 interval = 1
-format-prefix ="      "
+format-prefix ="   "
 format = <label>
 format-background = ${colors.black}
-format-foreground = ${colors.aqua}
+format-foreground = ${colors.cyan}
+label-maxlen = 18
 format-padding = 0
 
 exec = ~/.local/bin/spotify_status.py -t 50 -qf '{artist}: {song}'
@@ -421,7 +495,7 @@ type = internal/memory
 ; Seconds to sleep between updates
 interval = 3
 
-label = "    %percentage_used%%"
+label = " %percentage_used%"
 
 format-prefix-padding = 2
 format-prefix-font = 2
@@ -457,7 +531,7 @@ type = internal/cpu
 
 interval = 1
 format = <label>
-label = "    %percentage%% "
+label = " %percentage%%"
 
 format-background = ${colors.black}
 format-foreground = ${colors.yellow}
@@ -468,9 +542,9 @@ type = internal/date
 interval = 1
 
 date = 
-date-alt = "  﨟  %A, %b %d -"
+date-alt = "﨟 %A, %b %d -"
 
-time = "    %H:%M "
+time = " %H:%M "
 time-alt = "%I:%M:%S %p "
 
 ;format-prefix = ""
