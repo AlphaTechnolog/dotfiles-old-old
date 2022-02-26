@@ -5,8 +5,8 @@
 
 # env variables
 # get with xrandr
-EXTERNAL_MONITOR_NAME="HDMI-1" # e.g: Your monitor that are connected sometimes to your laptop
-ONLY_ONE_MONITOR_NAME="LVDS-1" # e.g: Laptop monitor name
+EXTERNAL_MONITOR_NAME="HDMI1" # e.g: Your monitor that are connected sometimes to your laptop
+ONLY_ONE_MONITOR_NAME="LVDS1" # e.g: Laptop monitor name
 
 # getting the monitor
 connected_monitors=$(xrandr | grep -w 'connected' | cut -d ' ' -f 2 | wc -l)
@@ -19,7 +19,7 @@ fi
 
 # assign the workspaces with bspc
 assign_workspaces () {
-  bspc monitor $monitor -d I II III IV V VI VII VIII IX
+  bspc monitor $monitor -d I II III IV V
   if [[ $monitor == "$EXTERNAL_MONITOR_NAME" ]]; then
     bspc monitor $ONLY_ONE_MONITOR_NAME -d X
   fi
