@@ -5,6 +5,9 @@
 ; ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
 ; ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
                                                        
+# file inclusion
+
+include-file = ~/.config/polybar/monitor.ini
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -42,6 +45,7 @@ width = 100%
 height = 28
 radius = 0.0
 fixed-center = true
+monitor = ${monitor.monitor}
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -67,7 +71,7 @@ font-7 = "JetBrainsMono Nerd Font:pixelsize=12;4"
 ; MODULES SETUP
 modules-left = left1 appmenu left2 dot-alt left1 bspwm left2 dot left1 music_prev music_toggle_pause music_next spotify_status left2
 modules-center = medium1 windowtitle medium2
-modules-right = right1 pacman-updates right2 dot volume dot right1 cpu right2 dot network dot right1 date right2
+modules-right = right1 updates right2 dot volume dot right1 cpu right2 dot network dot right1 date right2
 
 tray-position = right
 tray-padding = 1
@@ -344,10 +348,10 @@ label-mounted-foreground = ${colors.cyan}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[module/pacman-updates]
+[module/updates]
 type = custom/script
-exec = checkupdates 2>/dev/null | wc -l || echo "0"
-interval = 1000
+exec = cat ~/.updates
+interval = 1
 label = " %output%"
 format-foreground = ${colors.green}
 format-foreground-error = ${colors.red}

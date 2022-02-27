@@ -7,6 +7,7 @@
 # get with xrandr
 EXTERNAL_MONITOR_NAME="HDMI1" # e.g: Your monitor that are connected sometimes to your laptop
 ONLY_ONE_MONITOR_NAME="LVDS1" # e.g: Laptop monitor name
+MONITOR_ORDER="HDMI1 LVDS1" # blank to default order, defines the order of the workspaces for the monitors
 
 # getting the monitor
 connected_monitors=$(xrandr | grep -w 'connected' | cut -d ' ' -f 2 | wc -l)
@@ -22,6 +23,9 @@ assign_workspaces () {
   bspc monitor $monitor -d I II III IV V
   if [[ $monitor == "$EXTERNAL_MONITOR_NAME" ]]; then
     bspc monitor $ONLY_ONE_MONITOR_NAME -d X
+  fi
+  if [[ $MONITOR_ORDER != "" ]]; then
+    bspc wm -O $MONITOR_ORDER
   fi
 }
 

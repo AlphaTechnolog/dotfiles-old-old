@@ -25,4 +25,7 @@ feh --bg-fill $wallpaper
 # don't remove this please
 sxhkd &
 
+# generate the updates
+bash $HOME/.config/bspwm/scripts/gen-updates.sh &
+
 # notify-send "Welcome Lord $USER"
