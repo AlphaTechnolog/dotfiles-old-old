@@ -447,7 +447,7 @@ label-connected = " %essid%"
 label-connected-font = 1
 
 format-disconnected = <label-disconnected>
-format-disconnected-prefix = 
+format-disconnected-prefix = " "
 format-disconnected-prefix-font = 1
 label-disconnected = " Disconnected"
 label-disconnected-font = 1
