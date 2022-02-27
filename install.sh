@@ -57,13 +57,11 @@ success () {
 }
 
 download_dotfiles () {
-  info "Downloading dotfiles (using git)"
-  if test -d $HOME/.bspwm-dotfiles; then
-    warning "Found another installation of bspwm dotfiles, moving it to $HOME/.bspwm-dotfiles.old"
-    mv $HOME/.bspwm-dotfiles $HOME/.bspwm-dotfiles.old
+  if ! test -d $HOME/.bspwm-dotfiles; then
+    info "Downloading dotfiles (using git)"
+    cmd "git clone https://github.com/AlphaTechnolog/bspwm-dotfiles-v2.git $HOME/.bspwm-dotfiles"
+    success "Downloaded dotfiles successfully"
   fi
-  cmd "git clone https://github.com/AlphaTechnolog/bspwm-dotfiles-v2.git $HOME/.bspwm-dotfiles"
-  success "Downloaded dotfiles successfully"
 }
 
 check_deps () {
