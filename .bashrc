@@ -10,7 +10,7 @@ alias la='exa --icons -la'
 alias tree='exa --icons --tree'
 alias cat='bat --theme base16 --paging=never --style=plain'
 alias g='copier -c github_token 2>&1 > /dev/null && git'
-alias clear='clear && pfetch'
+alias clear='clear && startup'
 
 # startup
 function startup {
