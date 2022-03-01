@@ -39,7 +39,7 @@ setup_theme_catppuccin () {
   bspc wm -r
   killall -q dunst
   dunst &
-  killall -q kitty
+  pkill -USR1 kitty
 }
 
 setup_theme_tokyonight () {
@@ -53,7 +53,7 @@ setup_theme_tokyonight () {
   bspc wm -r
   killall -q dunst
   dunst &
-  killall -q kitty
+  pkill -USR1 kitty
 }
 
 setup_theme_gruvbox () {
@@ -67,7 +67,7 @@ setup_theme_gruvbox () {
   bspc wm -r
   killall -q dunst
   dunst &
-  killall -q kitty
+  pkill -USR1 kitty
 }
 
 setup_theme_material_ocean () {
@@ -81,7 +81,7 @@ setup_theme_material_ocean () {
   bspc wm -r
   killall -q dunst
   dunst &
-  killall -q kitty
+  pkill -USR1 kitty
 }
 
 setup_theme_onedark () {
@@ -95,7 +95,7 @@ setup_theme_onedark () {
   bspc wm -r
   killall -q dunst
   dunst &
-  killall -q kitty
+  pkill -USR1 kitty
 }
 
 main () {
