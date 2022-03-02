@@ -1,7 +1,7 @@
 #!/bin/bash
 
 wall_catppuccin () {
-  echo $HOME/.bspwm-dotfiles/.sample-wallpapers/catppuccin-comfy-home.png
+  echo $HOME/.bspwm-dotfiles/.sample-wallpapers/catppuccin-techno.png
 }
 
 wall_tokyonight () {
