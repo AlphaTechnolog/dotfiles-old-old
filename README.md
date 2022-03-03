@@ -14,7 +14,8 @@ You really make me happy if you do it :D
 
 ## Requirements
 
-I am using Arch Linux, but I expect you have it, to make all work
+I am using void linux, I expect you use it to make all work, but installation
+also works for Arch Linux
 
 - Iosevka Nerd Font
 - Sauce Code Pro Nerd Font
@@ -45,7 +46,7 @@ I use `bash`, `zsh` and `fish`. I use this shells, but in combination with stars
 
 ## Installation
 
-- The installers only works in an arch-based system because dependencies are installed with pacman and yay
+- The installers only works for void linux and arch linux
 - The installers setup bash as default shell, but configuration with starship are created too for `fish` and `zsh`
 - The installers may copy your old configurations files to `filename.old` if it found it's folders, it don't delete your old configuration folders
 
@@ -58,6 +59,14 @@ To use it, execute this command:
 
 ```sh
 curl https://raw.githubusercontent.com/AlphaTechnolog/bspwm-dotfiles-v2/main/install.sh | bash
+```
+
+Or at clone the dotfiles (is important that the dotfiles are in ~/.bspwm-dotfiles):
+
+```sh
+git clone https://github.com/AlphaTechnolog/bspwm-dotfiles-v2.git ~/.bspwm-dotfilesthe 
+cd ~/.bspwm-dotfiles
+./install.sh
 ```
 
 ## Dotbot
@@ -84,6 +93,7 @@ I have a lot of wallpapers, it are published in [.sample-wallpapers](https://git
 ![tokyonight](./.misc/showcase/tokyonight.png)
 ![gruvbox](./.misc/showcase/gruvbox.png)
 ![material-ocean](./.misc/showcase/material-ocean.png)
+![onedark](./.misc/showcase/onedark.png)
 
 > A tool to change themes is in development :D
 
