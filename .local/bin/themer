@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 1 = true && 0 = false
-NVCODARK_SUPPORT=1
+NVCODARK_SUPPORT=0
 
 get_theme () {
   local choices='catppuccin tokyonight gruvbox material_ocean onedark'
