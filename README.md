@@ -81,6 +81,41 @@ bash install-dotbot.sh
 
 And that's all
 
+## Tips
+
+### Change theme
+
+I made a tool `.local/bin/themer` that change the theme automatically,
+to use it, use the keyboard shortcut: `super + t`, that open a rofi window
+where you can select the theme.
+
+If you use [nvcodark](https://github.com/AlphaTechnolog/nvcodark), it
+can change automatically the theme of it, modifying the `~/.config/nvim/lua/rc.lua`
+file trying to apply the selected theme, to enable it support, open the file `~/.local/bin/themer`
+and then change `NVCODARK_SUPPORT=0` to `NVCODARK_SUPPORT=1`, then change
+the theme normally with `super + t`.
+
+## Keybindings
+
+- super + Return: `kitty` (open kitty)
+- super + shift + Return: `rofi -show drun` (open rofi)
+- super + Escape: `pkill -USR1 -x sxhkd` (restart sxhkd)
+- super + shift + q: `bspc quit` (quit bspwm)
+- super + shift + r: `bspc wm -r` (reload bspwm)
+- super + Tab: `bspc desktop -l next` (next layout (monocle or tiled))
+- super + shift + Tab: `bspc desktop -l previous` (prev layout (monocle or tiled))
+- super + y: `bspc node newest.marked.local -n newest.!automatic.local` (send the newest marked node to the newest preselected node)
+- super + g: `bspc node -s biggest` (swap the current node and the biggest node)
+- super + t: `bspc node -t tiled` (set window state to tiled)
+- super + space: `bspc node -t floating` (set window state to floating)
+- super + f: `bspc node -t fullscreen` (set window state to fullscreen)
+- super + ctrl + m: `bspc node -g marked` (set node flag to marked)
+- super + ctrl + x: `bspc node -g locked` (set node flag to locked)
+- super + ctrl + y: `bspc node -g sticky` (set node flag to sticky)
+- super + ctrl + z: `bspc node -g private` (set node flag to private)
+- super + b: `firefox` (spawn firefox)
+- super + shift + t: `~/.local/bin/themer` (spawn themer)
+
 ## Wallpapers
 
 I have a lot of wallpapers, it are published in [.sample-wallpapers](https://github.com/AlphaTechnolog/bspwm-dotfiles-v2/tree/main/.sample-wallpapers) folder

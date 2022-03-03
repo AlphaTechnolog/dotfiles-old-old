@@ -128,14 +128,5 @@ super + alt + {h,j,k,l}
 super + b
     firefox
 
-super + p
-    ~/.local/bin/audio-toggler
-
-super + s
-    ~/.local/bin/spanish-kb-copier
-
-super + shift + p
-  manette
-
 super + shift + t
   ~/.local/bin/themer
