@@ -19,3 +19,7 @@ wall_material_ocean () {
 wall_onedark () {
   echo $HOME/.bspwm-dotfiles/.sample-wallpapers/onedark.png
 }
+
+wall_everforest () {
+  echo $HOME/.bspwm-dotfiles/.sample-wallpapers/everforest.jpg
+}
