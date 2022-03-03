@@ -95,6 +95,17 @@ file trying to apply the selected theme, to enable it support, open the file `~/
 and then change `NVCODARK_SUPPORT=0` to `NVCODARK_SUPPORT=1`, then change
 the theme normally with `super + t`.
 
+I create ports for my setup using precreated palettes, now only exists support for:
+
+- catppuccin
+- tokyonight
+- gruvbox
+- material-ocean
+- onedark
+- everforest
+
+> Go to the [galery](#galery) to see screenshots of the styles
+
 ## Keybindings
 
 - super + Return: `kitty` (open kitty)
@@ -124,11 +135,23 @@ I have a lot of wallpapers, it are published in [.sample-wallpapers](https://git
 
 ## Galery
 
+### Catppuccin
 ![catppuccin](./.misc/showcase/catppuccin.png)
+
+### Tokyonight
 ![tokyonight](./.misc/showcase/tokyonight.png)
+
+### Gruvbox
 ![gruvbox](./.misc/showcase/gruvbox.png)
+
+### Material Ocean
 ![material-ocean](./.misc/showcase/material-ocean.png)
+
+### Onedark
 ![onedark](./.misc/showcase/onedark.png)
+
+### Everforest
+![everforest](./.misc/showcase/everforest.png)
 
 > A tool to change themes is in development :D
 
