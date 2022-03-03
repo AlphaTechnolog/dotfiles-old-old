@@ -153,8 +153,6 @@ I have a lot of wallpapers, it are published in [.sample-wallpapers](https://git
 ### Everforest
 ![everforest](./.misc/showcase/everforest.png)
 
-> A tool to change themes is in development :D
-
 ## Dedicated to
 
 [my brother](https://github.com/Jags1906) <3
