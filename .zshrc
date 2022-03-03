@@ -1,3 +1,8 @@
+# env
+
+export SHELL=$(which zsh)
+export PATH="$HOME/.local/bin:$PATH"
+
 # aliases
 alias ls='exa --icons'
 alias la='exa --icons -la'
