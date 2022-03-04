@@ -2,6 +2,7 @@
 
 # 1 = true && 0 = false
 NVCODARK_SUPPORT=1
+CHADWM_SUPPORT=0
 
 get_theme () {
   local choices='catppuccin tokyonight gruvbox material_ocean onedark everforest'
@@ -159,7 +160,9 @@ main () {
     mv ./.tmp-rc.lua $HOME/.config/nvim/lua/rc.lua
   fi
 
-  setup_chadwm "$theme"
+  if [[ $CHADWM_SUPPORT == 1 ]]; then
+    setup_chadwm "$theme"
+  fi
 }
 
 main
