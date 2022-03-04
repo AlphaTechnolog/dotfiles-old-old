@@ -35,7 +35,7 @@ static const char *fonts[]          = { "JetBrainsMono Nerd Font:style:medium:si
 static const int colorfultag        = 1;  /* 0 means use SchemeSel for selected non vacant tag */
 
 // theme
-#include "themes/everforest.h"
+#include "themes/everforest.h";
 
 static const char *colors[][3]      = {
     /*               fg         bg         border   */
@@ -62,6 +62,7 @@ static const char *rofi[] = {"rofi", "-show", "drun", NULL };
 static const char *pausectrl[] = {"playerctl", "play-pause", NULL};
 static const char *prevctrl[] = {"playerctl", "previous", NULL};
 static const char *nextctrl[] = {"playerctl", "next", NULL};
+static const char *themer[] = { "sh", "-c", "~/.local/bin/themer", NULL };
 
 static const Launcher launchers[] = {
        /* command       name to display */
@@ -141,6 +142,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_Return, spawn,           {.v = rofi } },
     { MODKEY,                       XK_Return, spawn,           {.v = term }},  
     { MODKEY,                       XK_b,      spawn,           {.v = firefox }},
+    { MODKEY|ShiftMask,             XK_t,      spawn,           {.v = themer }},
     // { MODKEY,                       XK_Return, spawn,          SHCMD("st_pad && st")},  
 
     // hardware

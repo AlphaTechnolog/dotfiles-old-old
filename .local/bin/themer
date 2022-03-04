@@ -112,6 +112,26 @@ setup_theme_everforest () {
   pkill -USR1 kitty
 }
 
+setup_chadwm () {
+  local theme=$1
+  if ! test -d $HOME/.config/chadwm; then
+    >&2 echo "Chadwm config not found!"
+  else
+    notify-send "Changing dwm theme to $theme..."
+    cat $HOME/.config/chadwm/chadwm/config.def.h | sed "s/#include \"themes\/.*\.h\"/#include \"themes\/$theme\.h\"/g" > .newconfig.def.h
+    rm $HOME/.config/chadwm/chadwm/config.def.h
+    mv .newconfig.def.h $HOME/.config/chadwm/chadwm/config.def.h
+    cat ~/.config/chadwm/scripts/bar.sh | sed "s/^\..\~\/\.config\/chadwm\/scripts\/bar_themes\/.*$/\. \~\/\.config\/chadwm\/scripts\/bar_themes\/$theme/g" > .barscript.sh
+    rm $HOME/.config/chadwm/scripts/bar.sh
+    mv .barscript.sh $HOME/.config/chadwm/scripts/bar.sh
+    chmod +x $HOME/.config/chadwm/scripts/bar.sh
+    cd $HOME/.config/chadwm/chadwm
+    notify-send "Done, recompiling chadwm..."
+    kitty -e $SHELL -c 'sudo make clean install' -d $HOME/.config/chadwm/chadwm
+    notify-send 'Done, restart dwm to apply changes'
+  fi
+}
+
 main () {
   local theme=$(get_theme)
   echo "Configuring system to use $theme..."
@@ -138,6 +158,8 @@ main () {
     rm $HOME/.config/nvim/lua/rc.lua
     mv ./.tmp-rc.lua $HOME/.config/nvim/lua/rc.lua
   fi
+
+  setup_chadwm "$theme"
 }
 
 main
