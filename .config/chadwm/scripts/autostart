@@ -1,0 +1,14 @@
+#!/bin/sh
+
+. ~/.config/chadwm/scripts/wallpaper.sh
+
+# this is just an example!
+# add your autostart stuffs here
+picom &
+load_wallpaper
+dunst &
+
+# run bar script and dwm ( do not remove this )
+~/.config/chadwm/scripts/./gen-updates.sh &
+~/.config/chadwm/scripts/./bar.sh &
+dwm
