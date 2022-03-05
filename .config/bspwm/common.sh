@@ -30,7 +30,7 @@ load_border_theme "$BORDER_THEME"
 setopt split_ratio 0.52
 setopt borderless_monocle true
 setopt gapless_monocle true
-setopt single_monocle false
+setopt single_monocle true
 
 # pointer
 setopt focus_follows_pointer true
