@@ -12,7 +12,7 @@ function setopt () {
 }
 
 # borders and gaps
-# setopt border_width 1 # uncomment to use borders
+setopt border_width 0 # uncomment to use borders
 # setopt border_radius 15 # only works using bspwm-rounded verrsion of bspwm
 setopt window_gap 12
 
@@ -30,7 +30,7 @@ load_border_theme "$BORDER_THEME"
 setopt split_ratio 0.52
 setopt borderless_monocle true
 setopt gapless_monocle true
-setopt single_monocle true
+setopt single_monocle false
 
 # pointer
 setopt focus_follows_pointer true
