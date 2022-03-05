@@ -23,3 +23,7 @@ wall_onedark () {
 wall_everforest () {
   echo $HOME/.bspwm-dotfiles/.sample-wallpapers/everforest.jpg
 }
+
+wall_everblush () {
+  echo $HOME/.bspwm-dotfiles/.sample-wallpapers/everblush.png
+}

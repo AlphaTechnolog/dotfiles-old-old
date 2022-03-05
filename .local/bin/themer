@@ -5,7 +5,7 @@ NVCODARK_SUPPORT=1
 CHADWM_SUPPORT=1
 
 get_theme () {
-  local choices='catppuccin tokyonight gruvbox material_ocean onedark everforest'
+  local choices='catppuccin tokyonight gruvbox material_ocean onedark everforest everblush'
   local theme="$(rofi -sep "|" -dmenu -i -p '' <<< $(echo "$choices" | tr ' ' '|'))"
   if [[ $theme == "" ]]; then
     exit 1
@@ -29,90 +29,6 @@ update_pycritty () {
   pycritty -t $theme
 }
 
-setup_theme_catppuccin () {
-  delete_actual_files
-  cp -r $HOME/.config/kitty/kitty-catppuccin.conf $HOME/.config/kitty/kitty.conf
-  cp -r $HOME/.config/dunst/themes/catppuccin/dunstrc $HOME/.config/dunst/dunstrc
-  cp -r $HOME/.config/polybar/themes/catppuccin $HOME/.config/polybar/config
-  cp -r $HOME/.config/rofi/config-catppuccin.rasi $HOME/.config/rofi/config.rasi
-  echo catppuccin > $HOME/.actual-theme
-  echo "Done, reloading system"
-  bspc wm -r
-  killall -q dunst
-  dunst &
-  pkill -USR1 kitty
-}
-
-setup_theme_tokyonight () {
-  delete_actual_files
-  cp -r $HOME/.config/kitty/kitty-tokyonight.conf $HOME/.config/kitty/kitty.conf
-  cp -r $HOME/.config/dunst/themes/tokyonight/dunstrc $HOME/.config/dunst/dunstrc
-  cp -r $HOME/.config/polybar/themes/tokyonight $HOME/.config/polybar/config
-  cp -r $HOME/.config/rofi/config-tokyonight.rasi $HOME/.config/rofi/config.rasi
-  echo tokyonight > $HOME/.actual-theme
-  echo "Done, reloading system"
-  bspc wm -r
-  killall -q dunst
-  dunst &
-  pkill -USR1 kitty
-}
-
-setup_theme_gruvbox () {
-  delete_actual_files
-  cp -r $HOME/.config/kitty/kitty-gruvbox.conf $HOME/.config/kitty/kitty.conf
-  cp -r $HOME/.config/dunst/themes/gruvbox/dunstrc $HOME/.config/dunst/dunstrc
-  cp -r $HOME/.config/polybar/themes/gruvbox $HOME/.config/polybar/config
-  cp -r $HOME/.config/rofi/config-gruvbox.rasi $HOME/.config/rofi/config.rasi
-  echo gruvbox > $HOME/.actual-theme
-  echo "Done, reloading system"
-  bspc wm -r
-  killall -q dunst
-  dunst &
-  pkill -USR1 kitty
-}
-
-setup_theme_material_ocean () {
-  delete_actual_files
-  cp -r $HOME/.config/kitty/kitty-material-ocean.conf $HOME/.config/kitty/kitty.conf
-  cp -r $HOME/.config/dunst/themes/material-ocean/dunstrc $HOME/.config/dunst/dunstrc
-  cp -r $HOME/.config/polybar/themes/material-ocean $HOME/.config/polybar/config
-  cp -r $HOME/.config/rofi/config-material-ocean.rasi $HOME/.config/rofi/config.rasi
-  echo material_ocean > $HOME/.actual-theme
-  echo "Done, reloading system"
-  bspc wm -r
-  killall -q dunst
-  dunst &
-  pkill -USR1 kitty
-}
-
-setup_theme_onedark () {
-  delete_actual_files
-  cp -r $HOME/.config/kitty/kitty-onedark.conf $HOME/.config/kitty/kitty.conf
-  cp -r $HOME/.config/dunst/themes/onedark/dunstrc $HOME/.config/dunst/dunstrc
-  cp -r $HOME/.config/polybar/themes/onedark $HOME/.config/polybar/config
-  cp -r $HOME/.config/rofi/config-onedark.rasi $HOME/.config/rofi/config.rasi
-  echo onedark > $HOME/.actual-theme
-  echo "Done, reloading system"
-  bspc wm -r
-  killall -q dunst
-  dunst &
-  pkill -USR1 kitty
-}
-
-setup_theme_everforest () {
-  delete_actual_files
-  cp -r $HOME/.config/kitty/kitty-everforest.conf $HOME/.config/kitty/kitty.conf
-  cp -r $HOME/.config/dunst/themes/everforest/dunstrc $HOME/.config/dunst/dunstrc
-  cp -r $HOME/.config/polybar/themes/everforest $HOME/.config/polybar/config
-  cp -r $HOME/.config/rofi/config-everforest.rasi $HOME/.config/rofi/config.rasi
-  echo everforest > $HOME/.actual-theme
-  echo "Done, reloading system"
-  bspc wm -r
-  killall -q dunst
-  dunst &
-  pkill -USR1 kitty
-}
-
 setup_chadwm () {
   local theme=$1
   if ! test -d $HOME/.config/chadwm; then
@@ -133,31 +49,65 @@ setup_chadwm () {
   fi
 }
 
+replace_dotfiles () {
+  local theme=$1
+  if [[ $theme == 'material_ocean' ]]; then
+    theme='material-ocean'
+  fi
+  cp -r $HOME/.config/kitty/kitty-$theme.conf $HOME/.config/kitty/kitty.conf
+  cp -r $HOME/.config/dunst/themes/$theme/dunstrc $HOME/.config/dunst/dunstrc
+  cp -r $HOME/.config/polybar/themes/$theme $HOME/.config/polybar/config
+  cp -r $HOME/.config/rofi/config-$theme.rasi $HOME/.config/rofi/config.rasi
+}
+
+reload_system () {
+  bspc wm -r
+  killall -q dunst
+  dunst &
+  kill -USR1 $(pidof kitty)
+}
+
+setup_theme () {
+  local theme=$1
+  delete_actual_files
+  replace_dotfiles "$theme"
+  echo $theme > $HOME/.actual-theme
+  reload_system
+}
+
+setup_nvcodark () {
+  local theme="$1"
+  if [[ $theme == 'material_ocean' ]]; then
+    theme='material'
+  fi
+  local basepath="$HOME/.config/nvim"
+  local file="${basepath}/lua/rc.lua"
+  if ! test -f $file; then
+    >&2 echo "Warn: NvCoDark support is enabled but rc.lua file is not found in $basepath/lua"
+    exit 1
+  fi
+  cat $file | \
+    sed "s/config\.colorscheme = '.*'/config\.colorscheme = '$theme'/g" | \
+    sed "7s/theme = '.*'/theme = '$theme'/g" > .tmp-rc.lua
+  rm $HOME/.config/nvim/lua/rc.lua
+  mv ./.tmp-rc.lua $HOME/.config/nvim/lua/rc.lua
+}
+
 main () {
   local theme=$(get_theme)
   echo "Configuring system to use $theme..."
   notify-send "Setting $theme as theme..."
   sleep 1
-  update_pycritty $theme
-  setup_theme_${theme}
+  if command -v pycritty 2>&1 > /dev/null; then
+    update_pycritty $hteme
+  fi
+  setup_theme "$theme"
+  # setup_theme_${theme}
   sleep 1
   notify-send "Done!"
 
   if [[ $NVCODARK_SUPPORT == 1 ]]; then
-    if [[ $theme == 'material_ocean' ]]; then
-      theme='material'
-    fi
-    local basepath="$HOME/.config/nvim"
-    local file="${basepath}/lua/rc.lua"
-    if ! test -f $file; then
-      >&2 echo "Warn: NvCoDark support is enabled but rc.lua file is not found in $basepath/lua"
-      exit 1
-    fi
-    cat $file | \
-      sed "s/config\.colorscheme = '.*'/config\.colorscheme = '$theme'/g" | \
-      sed "7s/theme = '.*'/theme = '$theme'/g" > .tmp-rc.lua
-    rm $HOME/.config/nvim/lua/rc.lua
-    mv ./.tmp-rc.lua $HOME/.config/nvim/lua/rc.lua
+    setup_nvcodark "$theme"
   fi
 
   if [[ $CHADWM_SUPPORT == 1 ]]; then
