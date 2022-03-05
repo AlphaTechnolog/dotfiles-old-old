@@ -159,6 +159,9 @@ This is the first setup that I made with this styles! it works for bspwm with po
 #### Everforest
 ![everforest](./.misc/showcase/everforest.png)
 
+#### Everblush
+![everblush](./.misc/showcase/everblush.png)
+
 ### Dwm with chadwm
 
 This config also includes a custom setup based on [chadwm](https://github.com/siduck/chadwm), it's really beautiful too, I love it.
@@ -187,6 +190,10 @@ Some screenshots here (it has the same themes of the bspwm setup):
 #### Everforest
 
 ![everforest](./.misc/showcase/chadwm/everforest-chadwm.png)
+
+#### Everblush
+
+![everblush](./.misc/showcase/chadwm/everblush-chadwm.png)
 
 ## Dedicated to
 
