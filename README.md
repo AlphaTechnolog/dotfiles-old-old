@@ -1,4 +1,4 @@
-# The Bloat Dotfiles
+# The Bloated Dotfiles
 
 This is my configurations files repository (it's so bloated but very beautiful :D ) for
 bspwm and dwm (chadwm) I hope you enjoy and like it!
