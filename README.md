@@ -132,52 +132,58 @@ I have a lot of wallpapers, it are published in [.sample-wallpapers](https://git
 
 > You can get more catppuccin-based wallpapers [here](https://github.com/catppuccin/wallpapers)
 
-## Galery (bspwm)
+## Galery
 
-### Catppuccin
+I have two setups: bspwm and chadwm, continue scrolling to see awesome screenshots of all styles!
+
+### Bspwm
+
+This is the first setup that I made with this styles! it works for bspwm with polybar and much love
+
+#### Catppuccin
 ![catppuccin](./.misc/showcase/catppuccin.png)
 
-### Tokyonight
+#### Tokyonight
 ![tokyonight](./.misc/showcase/tokyonight.png)
 
-### Gruvbox
+#### Gruvbox
 ![gruvbox](./.misc/showcase/gruvbox.png)
 
-### Material Ocean
+#### Material Ocean
 ![material-ocean](./.misc/showcase/material-ocean.png)
 
-### Onedark
+#### Onedark
 ![onedark](./.misc/showcase/onedark.png)
 
-### Everforest
+#### Everforest
 ![everforest](./.misc/showcase/everforest.png)
 
-## Galery (Dwm with Chadwm)
+### Dwm with chadwm
 
 This config also includes a custom setup based on [chadwm](https://github.com/siduck/chadwm), it's really beautiful too, I love it.
 Some screenshots here (it has the same themes of the bspwm setup):
 
-### Catppuccin
+#### Catppuccin
 
 ![catppuccin-chadwm](./.misc/showcase/chadwm/catppuccin-chadwm.png)
 
-### Tokyonight
+#### Tokyonight
 
 ![tokyonight-chadwm](./.misc/showcase/chadwm/tokyonight-chadwm.png)
 
-### Gruvbox
+#### Gruvbox
 
 ![gruvbox-chadwm](./.misc/showcase/chadwm/gruvbox-chadwm.png)
 
-### Material Ocean
+#### Material Ocean
 
 ![material-ocean-chadwm](./.misc/showcase/chadwm/material-ocean-chadwm.png)
 
-### Onedark
+#### Onedark
 
 ![onedark](./.misc/showcase/chadwm/onedark-chadwm.png)
 
-### Everforest
+#### Everforest
 
 ![everforest](./.misc/showcase/chadwm/everforest.png)
 
