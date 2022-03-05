@@ -26,7 +26,7 @@ EOF
 banner () {
   clear
   printf "${BLUE}$(basebanner)${NC}\n"
-  printf "                                                    ${MAGENTA}By: ${GREEN}AlphaTechnolog${NC}\n\n"
+  printf "                                                                        ${MAGENTA}By: ${GREEN}AlphaTechnolog${NC}\n\n"
   printf "${MAGENTA}┌─>Notice: ${ORANGE}See more of my work in: ${BLUE}https://github.com/AlphaTechnolog${NC}\n"
   printf "${MAGENTA}└────────> ${ORANGE}This installer only works for an ${BLUE}arch-based system${ORANGE}, or in a ${GREEN}void linux installation${ORANGE}, because dependencies are installed with ${BLUE}pacman${ORANGE} and ${BLUE}yay${ORANGE} or for void with ${GREEN}xbps-install${ORANGE}.${NC}\n\n"
 }
@@ -162,9 +162,18 @@ setup_chadwm () {
   success "Done"
 }
 
+confirm_continue () {
+  info "Press enter to continue with the instalation... "
+  read choice
+  if [[ $choice != "" ]]; then
+    error "Canceled Installation"
+  fi
+}
+
 main () {
   banner
   check_deps
+  confirm_continue
   download_dotfiles
   install_dependencies
   copy_files
