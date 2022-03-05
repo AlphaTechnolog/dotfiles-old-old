@@ -1,10 +1,9 @@
-# Bspwm Dotfiles V2
+# Dotfiles
 
-> This is a refactor of my old [bspwm setup](https://github.com/AlphaTechnolog/bspwm-dotfiles)
-
-My Configuration files for my new bspwm setup
+My Configuration files for my new bspwm/dwm setup
 
 ![rice](./.misc/rice.png)
+![catppuccin](./.misc/showcase/chadwm/catppuccin-chadwm.png)
 
 ## Note
 
@@ -127,7 +126,33 @@ I create ports for my setup using precreated palettes, now only exists support f
 - super + b: `firefox` (spawn firefox)
 - super + shift + t: `~/.local/bin/themer` (spawn themer)
 
-## Extra
+## Wallpapers
+
+I have a lot of wallpapers, it are published in [.sample-wallpapers](https://github.com/AlphaTechnolog/dotfiles/tree/main/.sample-wallpapers) folder
+
+> You can get more catppuccin-based wallpapers [here](https://github.com/catppuccin/wallpapers)
+
+## Galery (bspwm)
+
+### Catppuccin
+![catppuccin](./.misc/showcase/catppuccin.png)
+
+### Tokyonight
+![tokyonight](./.misc/showcase/tokyonight.png)
+
+### Gruvbox
+![gruvbox](./.misc/showcase/gruvbox.png)
+
+### Material Ocean
+![material-ocean](./.misc/showcase/material-ocean.png)
+
+### Onedark
+![onedark](./.misc/showcase/onedark.png)
+
+### Everforest
+![everforest](./.misc/showcase/everforest.png)
+
+## Galery (Dwm with Chadwm)
 
 This config also includes a custom setup based on [chadwm](https://github.com/siduck/chadwm), it's really beautiful too, I love it.
 Some screenshots here (it has the same themes of the bspwm setup):
@@ -155,32 +180,6 @@ Some screenshots here (it has the same themes of the bspwm setup):
 ### Everforest
 
 ![everforest](./.misc/showcase/chadwm/everforest.png)
-
-## Wallpapers
-
-I have a lot of wallpapers, it are published in [.sample-wallpapers](https://github.com/AlphaTechnolog/dotfiles/tree/main/.sample-wallpapers) folder
-
-> You can get more catppuccin-based wallpapers [here](https://github.com/catppuccin/wallpapers)
-
-## Galery
-
-### Catppuccin
-![catppuccin](./.misc/showcase/catppuccin.png)
-
-### Tokyonight
-![tokyonight](./.misc/showcase/tokyonight.png)
-
-### Gruvbox
-![gruvbox](./.misc/showcase/gruvbox.png)
-
-### Material Ocean
-![material-ocean](./.misc/showcase/material-ocean.png)
-
-### Onedark
-![onedark](./.misc/showcase/onedark.png)
-
-### Everforest
-![everforest](./.misc/showcase/everforest.png)
 
 ## Dedicated to
 
