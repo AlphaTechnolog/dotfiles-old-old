@@ -185,7 +185,7 @@ Some screenshots here (it has the same themes of the bspwm setup):
 
 #### Everforest
 
-![everforest](./.misc/showcase/chadwm/everforest.png)
+![everforest](./.misc/showcase/chadwm/everforest-chadwm.png)
 
 ## Dedicated to
 
