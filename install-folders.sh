@@ -1,6 +1,6 @@
 #!/bin/bash
-git clone https://github.com/AlphaTechnolog/bspwm-dotfiles-v2 ~/.bspwm-dotfiles
-cd ~/.bspwm-dotfiles
+git clone https://github.com/AlphaTechnolog/dotfiles ~/.dotfiles
+cd ~/.dotfiles
 declare -a folders=('.config' '.local/share' '.local/bin')
 for folder in ${folders[@]}; do
   if ! test -d ~/$folder; then

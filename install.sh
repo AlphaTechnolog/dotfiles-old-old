@@ -57,9 +57,9 @@ success () {
 }
 
 download_dotfiles () {
-  if ! test -d $HOME/.bspwm-dotfiles; then
+  if ! test -d $HOME/.dotfiles; then
     info "Downloading dotfiles (using git)"
-    cmd "git clone https://github.com/AlphaTechnolog/bspwm-dotfiles-v2.git $HOME/.bspwm-dotfiles"
+    cmd "git clone https://github.com/AlphaTechnolog/dotfiles.git $HOME/.dotfiles"
     success "Downloaded dotfiles successfully"
   fi
 }
@@ -93,17 +93,17 @@ check_deps () {
 
 copy_files () {
   info "Copying the files to your system"
-  cd $HOME/.bspwm-dotfiles
+  cd $HOME/.dotfiles
   declare -a folders=('.config' '.local/share' '.local/bin')
   for folder in ${folders[@]}; do
     if ! test -d $HOME/$folder; then
       mkdir -p $HOME/$folder
     fi
-    # looping each directory with folder in ~/.bspwm-dotfiles
+    # looping each directory with folder in ~/.dotfiles
     for subfolder in $(ls ./$folder); do
       # checking if a exists a folder with the same name of this item subitem
       # e.g: checking for exists a folder alacritty in ~/.config because I am iterating
-      # in ~/.bspwm-dotfiles/.config and I found a folder named alacritty
+      # in ~/.dotfiles/.config and I found a folder named alacritty
       if test -d $HOME/$folder/$subfolder; then
         warning "Moving $HOME/$folder/$subfolder -> $HOME/$folder/$subfolder.old"
         mv $HOME/$folder/$subfolder $HOME/$folder/$subfolder.old

@@ -58,14 +58,14 @@ and install the dependencies
 To use it, execute this command:
 
 ```sh
-curl https://raw.githubusercontent.com/AlphaTechnolog/bspwm-dotfiles-v2/main/install.sh | bash
+curl https://raw.githubusercontent.com/AlphaTechnolog/dotfiles/main/install.sh | bash
 ```
 
-Or at clone the dotfiles (is important that the dotfiles are in ~/.bspwm-dotfiles):
+Or at clone the dotfiles (is important that the dotfiles are in ~/.dotfiles):
 
 ```sh
-git clone https://github.com/AlphaTechnolog/bspwm-dotfiles-v2.git ~/.bspwm-dotfilesthe 
-cd ~/.bspwm-dotfiles
+git clone https://github.com/AlphaTechnolog/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
 ./install.sh
 ```
 
@@ -74,8 +74,8 @@ cd ~/.bspwm-dotfiles
 You can install with dotbot too with three simple bash-script commands
 
 ```sh
-git clone https://github.com/AlphaTechnolog/bspwm-dotfiles-v2 ~/.bspwm-dotfiles
-cd ~/.bspwm-dotfiles
+git clone https://github.com/AlphaTechnolog/dotfiles ~/.dotfiles
+cd ~/.dotfiles
 bash install-dotbot.sh
 ```
 
@@ -158,7 +158,7 @@ Some screenshots here (it has the same themes of the bspwm setup):
 
 ## Wallpapers
 
-I have a lot of wallpapers, it are published in [.sample-wallpapers](https://github.com/AlphaTechnolog/bspwm-dotfiles-v2/tree/main/.sample-wallpapers) folder
+I have a lot of wallpapers, it are published in [.sample-wallpapers](https://github.com/AlphaTechnolog/dotfiles/tree/main/.sample-wallpapers) folder
 
 > You can get more catppuccin-based wallpapers [here](https://github.com/catppuccin/wallpapers)
 
