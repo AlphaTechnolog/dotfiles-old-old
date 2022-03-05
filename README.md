@@ -1,6 +1,7 @@
-# Dotfiles
+# The Bloat Dotfiles
 
-My Configuration files for my new bspwm/dwm setup
+This is my configurations files repository (it's so bloated but very beautiful :D ) for
+bspwm and dwm (chadwm) I hope you enjoy and like it!
 
 ![rice](./.misc/rice.png)
 ![catppuccin](./.misc/showcase/chadwm/catppuccin-chadwm.png)
