@@ -152,6 +152,16 @@ setup_bash () {
   success "Done"
 }
 
+setup_chadwm () {
+  info "Recompiling dwm (chadwm)"
+  cmd "cd $HOME/.config/chadwm/chadwm && sudo make clean install"
+  success "Done"
+  info "Instaling fonts"
+  cmd "mkdir -p $HOME/.local/share/fonts"
+  cmd "cp -r $HOME/.config/chadwm/fonts/* $HOME/.local/share/fonts"
+  success "Done"
+}
+
 main () {
   banner
   check_deps
@@ -159,6 +169,7 @@ main () {
   install_dependencies
   copy_files
   setup_bash
+  setup_chadwm
   warning "More functionalities like auto bspwm monitors fixes coming soon..."
   success "Dotfiles installed successfully restart your system and login with bspwm to see changes"
 }

@@ -31,3 +31,4 @@
 
 - shell:
   - [bash dotbot-tools/setup-bash.sh, Fixing bash configuration to an appropiate working with oh my bash]
+  - [bash dotbot-tools/recompile-dwm.sh, Recompiling dwm]
