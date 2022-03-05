@@ -93,7 +93,7 @@ If you use [nvcodark](https://github.com/AlphaTechnolog/nvcodark), it
 can change automatically the theme of it, modifying the `~/.config/nvim/lua/rc.lua`
 file trying to apply the selected theme, to enable it support, open the file `~/.local/bin/themer`
 and then change `NVCODARK_SUPPORT=0` to `NVCODARK_SUPPORT=1`, then change
-the theme normally with `super + t`.
+the theme normally with `super + shift + t`.
 
 I create ports for my setup using precreated palettes, now only exists support for:
 
