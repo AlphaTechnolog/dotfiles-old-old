@@ -127,6 +127,35 @@ I create ports for my setup using precreated palettes, now only exists support f
 - super + b: `firefox` (spawn firefox)
 - super + shift + t: `~/.local/bin/themer` (spawn themer)
 
+## Extra
+
+This config also includes a custom setup based on [chadwm](https://github.com/siduck/chadwm), it's really beautiful too, I love it.
+Some screenshots here (it has the same themes of the bspwm setup):
+
+### Catppuccin
+
+![catppuccin-chadwm](./.misc/showcase/chadwm/catppuccin-chadwm.png)
+
+### Tokyonight
+
+![tokyonight-chadwm](./.misc/showcase/chadwm/tokyonight-chadwm.png)
+
+### Gruvbox
+
+![gruvbox-chadwm](./.misc/showcase/chadwm/gruvbox-chadwm.png)
+
+### Material Ocean
+
+![material-ocean-chadwm](./.misc/showcase/chadwm/material-ocean-chadwm.png)
+
+### Onedark
+
+![onedark](./.misc/showcase/chadwm/onedark-chadwm.png)
+
+### Everforest
+
+![everforest](./.misc/showcase/chadwm/everforest.png)
+
 ## Wallpapers
 
 I have a lot of wallpapers, it are published in [.sample-wallpapers](https://github.com/AlphaTechnolog/bspwm-dotfiles-v2/tree/main/.sample-wallpapers) folder
