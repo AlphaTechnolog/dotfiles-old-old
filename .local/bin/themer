@@ -2,7 +2,7 @@
 
 # 1 = true && 0 = false
 NVCODARK_SUPPORT=1
-CHADWM_SUPPORT=0
+CHADWM_SUPPORT=1
 
 get_theme () {
   local choices='catppuccin tokyonight gruvbox material_ocean onedark everforest'
