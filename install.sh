@@ -28,7 +28,7 @@ banner () {
   printf "${BLUE}$(basebanner)${NC}\n"
   printf "                                                    ${MAGENTA}By: ${GREEN}AlphaTechnolog${NC}\n\n"
   printf "${MAGENTA}┌─>Notice: ${ORANGE}See more of my work in: ${BLUE}https://github.com/AlphaTechnolog${NC}\n"
-  printf "${MAGENTA}└────────> ${ORANGE}This installer only works for an ${GREEN}arch-based system${ORANGE}, because dependencies are installed with ${BLUE}pacman${ORANGE} and ${BLUE}yay${ORANGE}.${NC}\n\n"
+  printf "${MAGENTA}└────────> ${ORANGE}This installer only works for an ${BLUE}arch-based system${ORANGE}, or in a ${GREEN}void linux installation${ORANGE}, because dependencies are installed with ${BLUE}pacman${ORANGE} and ${BLUE}yay${ORANGE} or for void with ${GREEN}xbps-install${ORANGE}.${NC}\n\n"
 }
 
 error () {
@@ -64,6 +64,23 @@ download_dotfiles () {
   fi
 }
 
+download_yay () {
+  cmd "mkdir -p $HOME/repo"
+  cmd "git clone https://aur.archlinux.org/yay-bin.git $HOME/repo/yay"
+  cmd "cd $HOME/repo/yay && makepkg -si --noconfirm"
+}
+
+install_yay () {
+  os=$(get_os)
+  if [[ $os == 'Arch Linux' ]]; then
+    if ! command -v yay; then
+      info "Installing yay: Cannot found it on your system!"
+      download_yay
+      success "Done"
+    fi
+  fi
+}
+
 check_deps () {
   declare -a deps=('git')
   for dep in ${deps[@]}; do
@@ -71,6 +88,7 @@ check_deps () {
       error "Dependency $dep is required, you must install it"
     fi
   done
+  install_yay
 }
 
 copy_files () {
@@ -108,10 +126,24 @@ copy_files () {
   success "Done, copied the files successfully"
 }
 
+get_os () {
+  grep -m1 "NAME=" </etc/os-release | cut -d '"' -f 2
+}
+
 install_dependencies () {
-  info "Installing dependencies for the dotfiles using yay"
-  cmd "yay -S ttf-iosevka-nerd nerd-fonts-source-code-pro nerd-fonts-jetbrains-mono kitty alacritty rofi sxhkd bspwm polybar picom feh bat exa dunst pfetch starship pycritty --noconfirm"
-  success "Installed base dependencies successfully"
+  os=$(get_os)
+  if [[ $os == 'void' ]]; then
+    info "Installing dependencies using xbps-install (for void linux)"
+    warning "The fonts, cannot be installed using the package manager, check required fonts in README and install it from https://nerdfonts.com/font-downloads"
+    cmd "sudo xbps-install -Sy kitty alacritty rofi sxhkd bspwm polybar picom feh bat exa dunst pfetch starship"
+    success "Installed base dependencies successfully"
+  elif [[ $os == 'Arch Linux' ]]; then
+    info "Trying to install dependencies with yay (for arch-linux-based systems)"
+    cmd "yay -S ttf-iosevka-nerd nerd-fonts-source-code-pro nerd-fonts-jetbrains-mono kitty alacritty rofi sxhkd bspwm polybar picom feh bat exa dunst pfetch starship pycritty --noconfirm"
+    success "Installed base dependencies successfully"
+  else
+    warning "This installer only works for arch linux and void linux distributions, you have another system! skipping auto dependencies installation"
+  fi
 }
 
 setup_bash () {
