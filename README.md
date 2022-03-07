@@ -1,6 +1,6 @@
-# The Bloated Dotfiles
+# Dotfiles
 
-This is my configurations files repository (it's so bloated but very beautiful :D ) for
+This is my configurations files repository for
 bspwm and dwm (chadwm) I hope you enjoy and like it!
 
 ![rice](./.misc/rice.png)
