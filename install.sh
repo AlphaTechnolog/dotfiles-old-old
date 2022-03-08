@@ -154,11 +154,13 @@ setup_bash () {
 
 setup_chadwm () {
   info "Recompiling dwm (chadwm)"
-  cmd "cd $HOME/.config/chadwm/chadwm && sudo make clean install"
+  cd $HOME/.config/chadwm/chadwm
+  sudo make clean install
   success "Done"
   info "Instaling fonts"
   cmd "mkdir -p $HOME/.local/share/fonts"
-  cmd "cp -r $HOME/.config/chadwm/fonts/* $HOME/.local/share/fonts"
+  printf "${MAGENTA}\$ ${GREY}cp -r $HOME/.config/chadwm/fonts/* $HOME/.local/share/fonts${NC}\n"
+  cp -r $HOME/.config/chadwm/fonts/* $HOME/.local/share/fonts
   success "Done"
 }
 
