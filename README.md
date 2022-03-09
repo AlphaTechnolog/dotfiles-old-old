@@ -103,6 +103,8 @@ I create ports for my setup using precreated palettes, now only exists support f
 - material-ocean
 - onedark
 - everforest
+- everblush
+- aquarium
 
 > Go to the [galery](#galery) to see screenshots of the styles
 
@@ -162,6 +164,9 @@ This is the first setup that I made with this styles! it works for bspwm with po
 #### Everblush
 ![everblush](./.misc/showcase/everblush.png)
 
+#### Aquarium
+![aquarium](./.misc/showcase/aquarium.png)
+
 ### Dwm with chadwm
 
 This config also includes a custom setup based on [chadwm](https://github.com/siduck/chadwm), it's really beautiful too, I love it.
@@ -194,6 +199,10 @@ Some screenshots here (it has the same themes of the bspwm setup):
 #### Everblush
 
 ![everblush](./.misc/showcase/chadwm/everblush-chadwm.png)
+
+#### Aquarium
+
+![aquarium](./.misc/showcase/chadwm/aquarium-chadwm.png)
 
 ## Dedicated to
 
