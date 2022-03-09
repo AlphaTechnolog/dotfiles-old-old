@@ -5,7 +5,7 @@ NVCODARK_SUPPORT=1
 CHADWM_SUPPORT=1
 
 get_theme () {
-  local choices='catppuccin tokyonight gruvbox material_ocean onedark everforest everblush'
+  local choices='catppuccin tokyonight gruvbox material_ocean onedark everforest everblush aquarium'
   local theme="$(rofi -sep "|" -dmenu -i -p '' <<< $(echo "$choices" | tr ' ' '|'))"
   if [[ $theme == "" ]]; then
     exit 1

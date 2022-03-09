@@ -5,7 +5,7 @@ main () {
 }
 
 wall_catppuccin () {
-  echo $HOME/.dotfiles/.sample-wallpapers/catppuccin-cat.png
+  echo $HOME/.dotfiles/.sample-wallpapers/catppuccin-bars.png
 }
 
 wall_tokyonight () {
@@ -30,6 +30,10 @@ wall_everforest () {
 
 wall_everblush () {
   echo $HOME/.dotfiles/.sample-wallpapers/everblush.png
+}
+
+wall_aquarium () {
+  echo $HOME/.dotfiles/.sample-wallpapers/aquarium.png
 }
 
 load_wallpaper () {

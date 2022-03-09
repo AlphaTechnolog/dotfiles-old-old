@@ -18,25 +18,25 @@ include-file = ~/.config/polybar/monitor.ini
 ;   \____\___/|_____\___/|_| \_\____/ 
                                     
 [colors]
-background = #181f21
+background = #20202a
 background-alt = #d1c4e99
-foreground = #dadada
-foreground-alt = #181f21
-primary = #8ccf7e
-secondary = #6cd0ca
-alert = #e06e6e
+foreground = #E5E9F0
+foreground-alt = #20202a
+primary = #CDDBF9
+secondary = #B8C9EA
+alert = #EBB9B9
 
-cyan = #6cd0ca
-aqua = #8ccf7e
-red = #e06e6e
-yellow = #e5c76b
-green = #8ccf7e
-orange = #e5c76b
-magenta = #c47fd5
-white = #b3b9b8
-pink = #c47fd5
-blue = #67b0e8
-black = #22292b
+cyan = #CDDBF9
+aqua = #A3CCAD
+red = #EBB9B9
+yellow = #E6DFB8
+green = #B1DBA4
+orange = #E6DFB8
+magenta = #F6BBE7
+white = #C6D0E9
+pink = #F6BBE7
+blue = #CDDBF9
+black = #2C2E3E
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -153,11 +153,11 @@ content-background = ${colors.black}
 
 [module/bspwm]
 type = internal/bspwm
-ws-icon-0 = I;%{F#e5c76b}  
-ws-icon-1 = II;%{F#67b0e8}亂   
-ws-icon-2 = III;%{F#e06e6e}    
-ws-icon-3 = IV;%{F#8ccf7e}阮
-ws-icon-4 = V;%{F#6cd0ca}ﭮ
+ws-icon-0 = I;%{F#E6DFB8}  
+ws-icon-1 = II;%{F#CDDBF9}亂   
+ws-icon-2 = III;%{F#EBB9B9}    
+ws-icon-3 = IV;%{F#B1DBA4}阮
+ws-icon-4 = V;%{F#CDDBF9}ﭮ
 ws-icon-default = ♟
 
 label-focused = "%icon%"
