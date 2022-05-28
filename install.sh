@@ -67,7 +67,8 @@ download_dotfiles () {
 download_yay () {
   cmd "mkdir -p $HOME/repo"
   cmd "git clone https://aur.archlinux.org/yay-bin.git $HOME/repo/yay"
-  cmd "cd $HOME/repo/yay && makepkg -si --noconfirm"
+  cmd "cd $HOME/repo/yay"
+  cmd "makepkg -si --noconfirm"
 }
 
 install_yay () {
