@@ -6,6 +6,18 @@ bspwm and dwm (chadwm) I hope you enjoy and like it!
 ![rice](./.misc/rice.png)
 ![catppuccin](./.misc/showcase/chadwm/catppuccin-chadwm.png)
 
+## Deprecation notice
+
+I'm not able to maintain this dotfiles anymore, i'm working on other rices such as:
+
+- [dotfiles-v2](https://github.com/AlphaTechnolog/dotfiles-v2) That are my new dotfiles with my own theme called decay and others themes too
+- [eww-dotfiles](https://github.com/AlphaTechnolog/eww-dotfiles)
+- [dwm](https://github.com/AlphaTechnolog/dwm)
+
+And others....
+
+Really thanks to all people that contributed to make this dotfiles possible :D
+
 ## Note
 
 If you like this configuration, you can give me a star pls :)
