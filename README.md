@@ -70,13 +70,13 @@ and install the dependencies
 To use it, execute this command:
 
 ```sh
-curl https://raw.githubusercontent.com/AlphaTechnolog/dotfiles/main/install.sh | bash
+curl https://raw.githubusercontent.com/AlphaTechnolog/dotfiles-old-old/main/install.sh | bash
 ```
 
 Or at clone the dotfiles (is important that the dotfiles are in ~/.dotfiles):
 
 ```sh
-git clone https://github.com/AlphaTechnolog/dotfiles.git ~/.dotfiles
+git clone https://github.com/AlphaTechnolog/dotfiles-old-oldd.git ~/.dotfiles
 cd ~/.dotfiles
 ./install.sh
 ```
@@ -86,7 +86,7 @@ cd ~/.dotfiles
 You can install with dotbot too with three simple bash-script commands
 
 ```sh
-git clone https://github.com/AlphaTechnolog/dotfiles ~/.dotfiles
+git clone https://github.com/AlphaTechnolog/dotfiles-old-old ~/.dotfiles
 cd ~/.dotfiles
 bash install-dotbot.sh
 ```
