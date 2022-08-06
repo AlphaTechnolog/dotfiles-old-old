@@ -10,7 +10,7 @@ bspwm and dwm (chadwm) I hope you enjoy and like it!
 
 I'm not able to maintain this dotfiles anymore, i'm working on other rices such as:
 
-- [dotfiles-v2](https://github.com/AlphaTechnolog/dotfiles-v2) That are my new dotfiles with my own theme called decay and others themes too
+- [dotfiles](https://github.com/AlphaTechnolog/dotfiles) Which are my new dotfiles.
 - [eww-dotfiles](https://github.com/AlphaTechnolog/eww-dotfiles)
 - [dwm](https://github.com/AlphaTechnolog/dwm)
 
