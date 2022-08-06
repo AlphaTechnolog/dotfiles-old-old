@@ -59,7 +59,7 @@ success () {
 download_dotfiles () {
   if ! test -d $HOME/.dotfiles; then
     info "Downloading dotfiles (using git)"
-    cmd "git clone https://github.com/AlphaTechnolog/dotfiles.git $HOME/.dotfiles"
+    cmd "git clone https://github.com/AlphaTechnolog/dotfiles-old-old.git $HOME/.dotfiles"
     success "Downloaded dotfiles successfully"
   fi
 }
